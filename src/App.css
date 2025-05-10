@@ -11,9 +11,11 @@
 
 .pane-container {
     width: 100%;
+    max-width: 1230px; /* Combined width of left pane (490px) + right pane (700px) + gap (40px) */
     display: flex;
     gap: 40px; /* Fixed pixel gap instead of percentage */
     align-items: flex-start;
+    margin: 0 auto;
 }
 
 .left-pane {
@@ -33,9 +35,9 @@
 }
 
 .right-pane {
-    width: 700px; /* 40% of 1920px */
+    width: 700px;
     flex-shrink: 1;
-    min-width: 300px;
+    min-width: 200px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 2em;
     text-align: left;
@@ -49,15 +51,18 @@
     .pane-container {
         flex-direction: column;
         gap: 3em;
+        max-width: 768px; /* Match the max-width of the right pane for consistency */
     }
 
     .left-pane {
         width: 100%;
         max-width: 576px;
+        margin: 0 auto;
     }
 
     .right-pane {
         width: 100%;
         max-width: 768px;
+        margin: 0 auto;
     }
 }
