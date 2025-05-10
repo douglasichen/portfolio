@@ -47,7 +47,7 @@
     margin: 1em 0;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1200px) {
     .pane-container {
         flex-direction: column;
         gap: 3em;
@@ -57,7 +57,7 @@
     .left-pane {
         width: 100%;
         max-width: 576px;
-        margin: 0 auto;
+        margin: 0;
     }
 
     .right-pane {
