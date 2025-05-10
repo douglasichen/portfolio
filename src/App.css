@@ -7,8 +7,12 @@
 
 .content {
     width: 100%;
+}
+
+.pane-container {
+    width: 100%;
     display: flex;
-    gap: 5%;
+    gap: 40px; /* Fixed pixel gap instead of percentage */
     align-items: flex-start;
 }
 
@@ -42,7 +46,7 @@
 }
 
 @media (max-width: 1400px) {
-    .content {
+    .pane-container {
         flex-direction: column;
         gap: 3em;
     }
