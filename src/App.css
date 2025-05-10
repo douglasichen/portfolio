@@ -1,6 +1,6 @@
 .layout {
     min-height: 100vh;
-    padding: 100px 4%;
+    padding: 100px max(4%, 100px);
     display: flex;
     align-items: center;
 }
