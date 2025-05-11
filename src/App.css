@@ -8,6 +8,27 @@
     --right-pane-width: 700px;
 
     --pane-gap: 40px;
+
+    /* Debug mode toggle: 0 for off, 1 for on */
+    --debug-mode: 1;
+
+    /* Debug outline colors */
+    --debug-outline-color-1: rgba(0, 149, 255, 0.5);
+    --debug-outline-color-2: rgba(0, 255, 34, 0.5);
+    --debug-outline-color-3: rgba(255, 0, 0, 0.5);
+}
+
+/* Apply debug outlines based on the variable value */
+* {
+    outline: calc(var(--debug-mode) * 1px) solid var(--debug-outline-color-1);
+}
+
+* * {
+    outline-color: var(--debug-outline-color-2);
+}
+
+* * * {
+    outline-color: var(--debug-outline-color-3);
 }
 
 .layout {
@@ -42,11 +63,6 @@
     width: var(--right-pane-width);
     padding-top: var(--pane-vertical-padding);
     padding-bottom: var(--pane-vertical-padding);
-    /* debug */
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     text-align: left;
     /* right pane takes 100% of the view port height.
       Makes the right pane fixed to the viewport height, 
@@ -61,10 +77,8 @@
     .pane-container {
         max-width: var(--layout-horizontal-padding);
         /* override margin from auto -> 0 */
-        margin: 0;
-    }
-
-    .pane-container {
+        margin-left: 0;
+        margin-right: 0;
         /* left pane, right pane -> top pane, bottom pane */
         flex-direction: column;
         max-width: calc(max(var(--right-pane-width), var(--left-pane-width)));
@@ -81,6 +95,6 @@
         width: 100%;
         max-width: calc(max(var(--right-pane-width), var(--left-pane-width)));
         height: auto;
-        padding: 0;
+        padding-top: 0;
     }
 }
