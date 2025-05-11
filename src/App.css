@@ -1,76 +1,63 @@
+:root {
+    --layout-horizontal-padding: 50px;
+    --pane-vertical-padding: 100px;
+
+    --left-pane-width: 550px;
+    --left-pane-text-vertical-separation: 12px;
+
+    --right-pane-width: 700px;
+
+    --pane-gap: 40px;
+}
+
 .layout {
-    padding: 0 50px;
+    padding-left: var(--layout-horizontal-padding);
+    padding-right: var(--layout-horizontal-padding);
 }
 
 .pane-container {
-    max-width: 1230px;
-    /* Combined width of left pane (490px) + right pane (700px) + gap (40px) */
+    max-width: calc(
+        var(--left-pane-width) + var(--right-pane-width) + var(--pane-gap)
+    );
+    gap: var(--pane-gap);
     display: flex;
-    gap: 40px;
-    /* Fixed pixel gap instead of percentage */
-    align-items: stretch;
-    margin: 0 auto;
-    height: 100%;
+    /* center element */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .left-pane {
-    width: 500px;
-    flex-shrink: 0;
+    width: var(--left-pane-width);
+    padding-top: var(--pane-vertical-padding);
+    padding-bottom: var(--pane-vertical-padding);
     text-align: left;
-    padding: 100px 0;
-}
-
-.left-pane h1 {
-    margin: 0;
-    font-size: 2.5em;
 }
 
 .left-pane h2 {
-    margin: 0.5em 0;
+    margin-top: var(--left-pane-text-vertical-separation);
+    margin-bottom: var(--left-pane-text-vertical-separation);
     font-weight: normal;
 }
 
 .right-pane {
-    width: 700px;
-    flex-shrink: 1;
-    min-width: 200px;
+    width: var(--right-pane-width);
+    padding-top: var(--pane-vertical-padding);
+    padding-bottom: var(--pane-vertical-padding);
+    /* debug */
     border-left: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 100px 2em;
     text-align: left;
+    /* right pane takes 100% of the view port height.
+      Makes the right pane fixed to the viewport height, 
+      regardless of how tall the whole page is.
+     */
     height: 100vh;
-    /* Full viewport height */
     overflow-y: auto;
-    /* Enable vertical scrolling */
     scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE and Edge */
-}
-
-/* Hide scrollbar for Chrome, Safari and Opera */
-.right-pane::-webkit-scrollbar {
-    display: none;
-}
-
-.right-pane p {
-    margin: 1em 0;
 }
 
 @media (max-width: 1050px) {
-    .layout {
-        height: auto;
-        min-height: 100vh;
-    }
-
     .pane-container {
-        flex-direction: column;
-        max-width: 50px;
-        width: 100%;
-        /* Full width */
-        padding: 0;
-        /* Add padding directly to container */
-        margin: 0;
-        /* Remove centering, align left */
+        max-width: var(--layout-horizontal-padding);
     }
 
     .content {
