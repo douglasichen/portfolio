@@ -12,37 +12,37 @@ function App() {
                         <p>I love solving problems</p>
                     </div>
                     <div className="right-pane">
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
-                    <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
+                        <p>PARAGRAPH HERE</p>
                     </div>
                 </div>
             </div>
