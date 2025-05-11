@@ -74,26 +74,33 @@
 }
 
 @media (max-width: 1050px) {
+    :root {
+        --pane-max-width: calc(
+            max(var(--right-pane-width), var(--left-pane-width))
+        );
+    }
+
     .pane-container {
-        max-width: var(--layout-horizontal-padding);
-        /* override margin from auto -> 0 */
+        max-width: var(--pane-max-width);
+        /* override margin auto -> 0 */
         margin-left: 0;
         margin-right: 0;
-        /* left pane, right pane -> top pane, bottom pane */
+        /* left pane, right pane -> top pane, bottom pane*/
         flex-direction: column;
-        max-width: calc(max(var(--right-pane-width), var(--left-pane-width)));
+    }
+
+    .left-pane,
+    .right-pane {
+        width: 100%;
+        max-width: var(--pane-max-width);
     }
 
     .left-pane {
-        width: 100%;
-        max-width: calc(max(var(--right-pane-width), var(--left-pane-width)));
         margin: 0;
         padding: 50px 0 20px;
     }
 
     .right-pane {
-        width: 100%;
-        max-width: calc(max(var(--right-pane-width), var(--left-pane-width)));
         height: auto;
         padding-top: 0;
     }
