@@ -81,7 +81,6 @@
     }
 
     .pane-container {
-        max-width: var(--pane-max-width);
         /* override margin auto -> 0 */
         margin-left: 0;
         margin-right: 0;
