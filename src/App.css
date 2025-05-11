@@ -74,12 +74,6 @@
 }
 
 @media (max-width: 1050px) {
-    :root {
-        --pane-max-width: calc(
-            max(var(--right-pane-width), var(--left-pane-width))
-        );
-    }
-
     .pane-container {
         /* override margin auto -> 0 */
         margin-left: 0;
@@ -91,12 +85,11 @@
     .left-pane,
     .right-pane {
         width: 100%;
-        max-width: var(--pane-max-width);
     }
 
     .left-pane {
         margin: 0;
-        padding: 50px 0 20px;
+        padding: 50px 0;
     }
 
     .right-pane {
