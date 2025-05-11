@@ -21,7 +21,6 @@
     );
     gap: var(--pane-gap);
     display: flex;
-    /* center element */
     margin-left: auto;
     margin-right: auto;
 }
@@ -45,6 +44,9 @@
     padding-bottom: var(--pane-vertical-padding);
     /* debug */
     border-left: 1px solid rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     text-align: left;
     /* right pane takes 100% of the view port height.
       Makes the right pane fixed to the viewport height, 
@@ -58,42 +60,27 @@
 @media (max-width: 1050px) {
     .pane-container {
         max-width: var(--layout-horizontal-padding);
-    }
-
-    .content {
-        height: auto;
-        overflow: visible;
+        /* override margin from auto -> 0 */
+        margin: 0;
     }
 
     .pane-container {
+        /* left pane, right pane -> top pane, bottom pane */
         flex-direction: column;
-        gap: 3em;
-        max-width: 768px;
-        /* Match the max-width of the right pane for consistency */
-        height: auto;
+        max-width: calc(max(var(--right-pane-width), var(--left-pane-width)));
     }
 
     .left-pane {
         width: 100%;
-        max-width: 576px;
+        max-width: calc(max(var(--right-pane-width), var(--left-pane-width)));
         margin: 0;
         padding: 50px 0 20px;
     }
 
     .right-pane {
         width: 100%;
-        max-width: 768px;
-        margin: 0 auto;
+        max-width: calc(max(var(--right-pane-width), var(--left-pane-width)));
         height: auto;
-        min-height: 70vh;
-        /* Take up most of the viewport height on mobile */
-        overflow-y: auto;
-        border-left: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 30px 1em;
-        scrollbar-width: none;
-        /* Firefox */
-        -ms-overflow-style: none;
-        /* IE and Edge */
+        padding: 0;
     }
 }
