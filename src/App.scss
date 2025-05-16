@@ -37,9 +37,7 @@ $debug-outline-color-3: rgba(255, 0, 0, 0.5);
 }
 
 .pane-container {
-    max-width: calc(
-        $left-pane-width + $right-pane-width + $pane-gap
-    );
+    max-width: calc($left-pane-width + $right-pane-width + $pane-gap);
     gap: $pane-gap;
     display: flex;
     margin-left: auto;
