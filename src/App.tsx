@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-import ExperienceList from "./components/ExperienceList";
+import ExperienceList from "./components/experience";
 
 function App() {
     return (
