@@ -1,4 +1,4 @@
-@import "../../App.scss";
+@use "../../App.scss";
 
 .experience-list-container {
     width: 100%;
@@ -28,7 +28,7 @@
             display: flex;
             flex-direction: column;
 
-            @media (min-width: $mobile-view-transition-threshold) {
+            @media (min-width: App.$mobile-view-transition-threshold) {
                 flex-direction: row;
             }
         }
@@ -36,7 +36,7 @@
         .time-frame {
             margin-bottom: 1rem;
 
-            @media (min-width: $mobile-view-transition-threshold) {
+            @media (min-width: App.$mobile-view-transition-threshold) {
                 width: 20%;
                 margin-bottom: 0;
             }
@@ -48,7 +48,7 @@
         }
 
         .job-details {
-            @media (min-width: $mobile-view-transition-threshold) {
+            @media (min-width: App.$mobile-view-transition-threshold) {
                 width: 80%;
             }
         }
