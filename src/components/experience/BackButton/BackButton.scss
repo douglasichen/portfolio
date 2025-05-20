@@ -1,0 +1,22 @@
+@use "../../../App.scss"; // Adjusted path
+
+// Styles for BackButton component
+.back-button {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 1.5rem;
+    transition: color 150ms ease;
+
+    &:hover {
+        color: #2dd4bf; // Teal on hover
+    }
+
+    span {
+        margin-left: 0.25rem;
+    }
+}

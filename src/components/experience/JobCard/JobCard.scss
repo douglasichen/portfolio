@@ -1,0 +1,33 @@
+@use "../../../App.scss"; // Adjusted path
+
+// Styles for JobCard component
+.job-card {
+    width: 100%;
+    padding: 2rem;
+    background-color: #1f2937; // Dark gray background
+    border-radius: 0.75rem;
+    margin-bottom: 1.5rem;
+    transition: opacity 150ms ease;
+    cursor: pointer;
+
+    &.dimmed {
+        opacity: 0.5;
+    }
+
+    .job-card-content {
+        display: flex;
+        flex-direction: column;
+
+        @media (min-width: App.$mobile-view-transition-threshold) {
+            flex-direction: row;
+        }
+    }
+
+    .job-details { // Container div inside JobCard
+        @media (min-width: App.$mobile-view-transition-threshold) {
+            width: 80%;
+        }
+    }
+    // SkillTags are used here, but their styles (.skill-tags, .skill-tag)
+    // are separate in the original Experience.scss and will be moved with SkillTags.tsx
+}

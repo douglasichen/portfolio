@@ -1,6 +1,7 @@
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
-import { JobTitleProps } from "../../types/experience";
+import { JobTitleProps } from "../../../types/experience"; // Adjusted path
+import './JobTitle.scss'; // New SCSS import
 
 const JobTitle: React.FC<JobTitleProps> = ({ title, company, isHovered }) => (
     <div className="job-title">

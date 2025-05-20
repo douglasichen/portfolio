@@ -1,6 +1,7 @@
 import React from "react";
 import { ChevronLeft } from "lucide-react";
-import { BackButtonProps } from "../../types/experience";
+import { BackButtonProps } from "../../../types/experience"; // Adjusted import path
+import './BackButton.scss';
 
 const BackButton: React.FC<BackButtonProps> = ({ onClick }) => (
     <button

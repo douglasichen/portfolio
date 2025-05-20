@@ -1,0 +1,14 @@
+@use "../../../App.scss"; // Adjusted path
+
+// Styles for ExperienceList component
+.experience-list-container {
+    width: 100%;
+    padding: 0;
+
+    .section-title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        color: white;
+    }
+}

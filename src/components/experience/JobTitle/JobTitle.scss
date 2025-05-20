@@ -1,0 +1,29 @@
+@use "../../../App.scss"; // Adjusted path
+
+// Styles for JobTitle component
+.job-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-right: 0.5rem;
+        color: white;
+        transition: color 150ms ease;
+
+        &.hovered {
+            color: #2dd4bf; // Teal color
+        }
+    }
+
+    svg {
+        transition: color 150ms ease;
+        color: white;
+
+        &.hovered {
+            color: #2dd4bf; // Teal color
+        }
+    }
+}

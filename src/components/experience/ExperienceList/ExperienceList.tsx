@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import JobCard from "./JobCard";
-import ExpandedCardOverlay from "./ExpandedCardOverlay";
-import jobExperiences from "../../data/jobExperiences";
-import "./Experience.scss";
+import JobCard from "../JobCard"; // Adjusted path
+import ExpandedCardOverlay from "../ExpandedCardOverlay"; // Adjusted path
+import jobExperiences from "../../../data/jobExperiences"; // Adjusted path
+import './ExperienceList.scss'; // New SCSS import
 
 const ExperienceList = () => {
     const [hoveredId, setHoveredId] = useState<number | null>(null);

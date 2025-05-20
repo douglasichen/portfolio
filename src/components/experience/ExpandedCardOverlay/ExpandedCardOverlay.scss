@@ -1,0 +1,67 @@
+@use "../../../App.scss"; // Adjusted path
+
+// Styles for ExpandedCardOverlay component
+
+// Expanded card styles
+.overlay-background {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: background-color 250ms ease;
+    z-index: 40;
+
+    &.closing {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.expanded-card {
+    color: #d1d5db; // Light gray text
+    // transition: opacity 250ms ease-out; // Removed from here
+
+    .fadeable-content-section {
+        opacity: 1;
+        transition: opacity 250ms ease-out;
+    }
+
+    .content-fade-out {
+        opacity: 0;
+    }
+
+    .back-button-container {
+        transition: opacity 150ms ease;
+        // Note: The actual BackButton styles are in BackButton/BackButton.scss
+        // This container style is for layout/transitions within ExpandedCardOverlay
+    }
+
+    .expanded-title {
+        font-size: 1.875rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: #2dd4bf; // Teal color
+    }
+
+    .expanded-timerange {
+        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
+        color: #9ca3af; // Gray text
+    }
+
+    .expanded-main-content {
+        margin-bottom: 2rem;
+
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+        // Note: SkillTags styles are in SkillTags/SkillTags.scss
+    }
+
+    .expanded-details {
+        margin-top: 2.5rem;
+        border-top: 1px solid #4b5563; // Gray border
+        padding-top: 1.5rem;
+        // Removed .hidden as opacity is handled by content-fade-out
+        // Note: DetailSection styles are in DetailSection/DetailSection.scss
+    }
+}

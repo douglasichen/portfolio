@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import BackButton from "./BackButton";
-import SkillTags from "./SkillTags";
-import DetailSection from "./DetailSection";
-import { ExpandedCardOverlayProps } from "../../types/experience";
+import BackButton from "../BackButton"; // Adjusted path
+import SkillTags from "../SkillTags"; // Adjusted path
+import DetailSection from "../DetailSection"; // Adjusted path
+import { ExpandedCardOverlayProps } from "../../../types/experience"; // Adjusted path
+import './ExpandedCardOverlay.scss'; // New SCSS import
 
 const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
     job,
