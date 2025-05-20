@@ -85,19 +85,19 @@
             margin-bottom: 1.5rem;
             color: #d1d5db; // Light gray text
         }
+    }
 
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
+    .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
 
-            .skill-tag {
-                padding: 0.5rem 1rem;
-                background-color: #374151; // Darker gray
-                border-radius: 9999px; // Full rounded
-                color: #2dd4bf; // Teal text
-                font-size: 0.875rem;
-            }
+        .skill-tag {
+            padding: 0.5rem 1rem;
+            background-color: #374151; // Darker gray
+            border-radius: 9999px; // Full rounded
+            color: #2dd4bf; // Teal text
+            font-size: 0.875rem;
         }
     }
 }
@@ -117,6 +117,16 @@
 
 .expanded-card {
     color: #d1d5db; // Light gray text
+    // transition: opacity 250ms ease-out; // Removed from here
+
+    .fadeable-content-section {
+        opacity: 1;
+        transition: opacity 250ms ease-out;
+    }
+
+    .content-fade-out {
+        opacity: 0;
+    }
 
     .back-button-container {
         transition: opacity 150ms ease;
@@ -168,10 +178,7 @@
         margin-top: 2.5rem;
         border-top: 1px solid #4b5563; // Gray border
         padding-top: 1.5rem;
-
-        &.hidden {
-            display: none;
-        }
+        // Removed .hidden as opacity is handled by content-fade-out
     }
 
     .detail-section {

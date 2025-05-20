@@ -17,12 +17,12 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
         position: "fixed",
         top: `${rect.top}px`,
         left: `${rect.left}px`,
-        width: `${mainContainerRect.width - 48}px`, // Accounting for container padding
+        width: `${rect.width}px`, // Keep the same width as the original card
         height: `${rect.height}px`,
         zIndex: 50,
         borderRadius: "0.75rem",
         padding: "2rem",
-        backgroundColor: "#111827", // bg-gray-900
+        backgroundColor: "#1f2937", // Same as job-card background color
         transition: "all 250ms ease-out",
         overflow: "hidden",
         overflowY: "auto", // Always allow scrolling
@@ -40,11 +40,11 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
 
             // Start with the card at its original position
             const timer1 = setTimeout(() => {
-                // Expand only vertically, keeping horizontal position and width the same
+                // Expand to full height of the page, keeping width the same
                 setStyle((prev) => ({
                     ...prev,
-                    top: "5vh",
-                    height: "90vh",
+                    top: "0",
+                    height: "100vh",
                     boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                 }));
             }, 25);
@@ -67,6 +67,8 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
     const backButtonOpacity = isAnimating || isClosing
         ? "opacity-0"
         : "opacity-100";
+    
+    const contentOpacityClass = isClosing ? "content-fade-out" : "";
 
     return (
         <>
@@ -84,7 +86,7 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
                 </div>
 
                 {/* Main content - always visible */}
-                <div>
+                <div className={`fadeable-content-section ${contentOpacityClass}`}>
                     <h2 className="expanded-title">
                         {job.title} · {job.company}
                     </h2>
@@ -98,7 +100,7 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
 
                 {/* Details section - always rendered, only hidden when closing */}
                 <div
-                    className={`expanded-details ${isClosing ? "hidden" : ""}`}
+                    className={`expanded-details fadeable-content-section ${contentOpacityClass}`}
                 >
                     <DetailSection
                         title="Key Achievements"
