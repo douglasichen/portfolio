@@ -3,13 +3,13 @@ import BackButton from "../BackButton";
 import SkillTags from "../SkillTags";
 import DetailSection from "../DetailSection";
 import { ExpandedCardOverlayProps } from "../../../types/experience";
-import './ExpandedCardOverlay.scss';
+import "./ExpandedCardOverlay.scss";
 
 const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
     job,
     rect,
     onClose,
-    isAnimating,
+    isAnimating: _isAnimating,
     isClosing,
 }) => {
     const contentRef = useRef<HTMLDivElement>(null);
@@ -57,7 +57,9 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
                     <BackButton onClick={onClose} />
                 </div>
 
-                <div className={`fadeable-content-section ${contentOpacityClass}`}>
+                <div
+                    className={`fadeable-content-section ${contentOpacityClass}`}
+                >
                     <h2 className="expanded-title">
                         {job.title} · {job.company}
                     </h2>

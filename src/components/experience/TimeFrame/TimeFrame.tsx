@@ -1,6 +1,6 @@
 import React from "react";
-import { TimeFrameProps } from "../../../types/experience"; // Adjusted path
-import './TimeFrame.scss'; // New SCSS import
+import { TimeFrameProps } from "../../../types/experience";
+import "./TimeFrame.scss";
 
 const TimeFrame: React.FC<TimeFrameProps> = ({ timeRange }) => (
     <div className="time-frame">

@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
-import TimeFrame from "../TimeFrame"; // Adjusted path
-import JobTitle from "../JobTitle"; // Adjusted path
-import JobDescription from "../JobDescription"; // Adjusted path
-import SkillTags from "../SkillTags"; // Adjusted path
-import { JobCardProps } from "../../../types/experience"; // Adjusted path
-import './JobCard.scss'; // New SCSS import
+import TimeFrame from "../TimeFrame";
+import JobTitle from "../JobTitle";
+import JobDescription from "../JobDescription";
+import SkillTags from "../SkillTags";
+import { JobCardProps } from "../../../types/experience";
+import "./JobCard.scss";
 
 const JobCard: React.FC<JobCardProps> = ({
     timeRange,
@@ -22,7 +22,6 @@ const JobCard: React.FC<JobCardProps> = ({
 }) => {
     const cardRef = useRef<HTMLDivElement>(null);
 
-    // Calculate opacity based on hover and expanded states
     const shouldDim = (hoveredId !== null && hoveredId !== id) ||
         (expandedId !== null);
 

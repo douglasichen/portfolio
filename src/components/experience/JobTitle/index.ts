@@ -1,2 +1,2 @@
-export * from './JobTitle';
-export { default } from './JobTitle'; // Default export
+export * from "./JobTitle";
+export { default } from "./JobTitle";

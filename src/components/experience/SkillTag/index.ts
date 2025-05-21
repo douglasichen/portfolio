@@ -1,2 +1,2 @@
-export * from './SkillTag';
-export { default } from './SkillTag'; // Default export
+export * from "./SkillTag";
+export { default } from "./SkillTag";

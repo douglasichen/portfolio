@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
-import JobCard from "../JobCard"; // Adjusted path
-import ExpandedCardOverlay from "../ExpandedCardOverlay"; // Adjusted path
-import jobExperiences from "../../../data/jobExperiences"; // Adjusted path
-import './ExperienceList.scss'; // New SCSS import
+import JobCard from "../JobCard";
+import ExpandedCardOverlay from "../ExpandedCardOverlay";
+import jobExperiences from "../../../data/jobExperiences";
+import "./ExperienceList.scss";
 
 const ExperienceList = () => {
     const [hoveredId, setHoveredId] = useState<number | null>(null);
@@ -73,22 +73,6 @@ const ExperienceList = () => {
 
     return (
         <div ref={containerRef} className="experience-list-container">
-            <style>
-                {`
-        body {
-          overflow: ${expandedId ? "hidden" : "auto"};
-        }
-        
-        :root {
-          --viewport-height: 100vh;
-        }
-      `}
-            </style>
-
-            {/* <h1 className="section-title">
-                Work Experience
-            </h1> */}
-
             {jobExperiences.map((job) => (
                 <JobCard
                     key={job.id}

@@ -1,6 +1,6 @@
 import React from "react";
-import { JobDescriptionProps } from "../../../types/experience"; // Adjusted path
-import './JobDescription.scss'; // New SCSS import
+import { JobDescriptionProps } from "../../../types/experience";
+import "./JobDescription.scss";
 
 const JobDescription: React.FC<JobDescriptionProps> = ({ description }) => (
     <p className="job-description">

@@ -1,7 +1,7 @@
 import React from "react";
-import SkillTag from "../SkillTag"; // Adjusted path
-import { SkillTagsProps } from "../../../types/experience"; // Adjusted path
-import './SkillTags.scss'; // New SCSS import
+import SkillTag from "../SkillTag";
+import { SkillTagsProps } from "../../../types/experience";
+import "./SkillTags.scss";
 
 const SkillTags: React.FC<SkillTagsProps> = ({ skills }) => (
     <div className="skill-tags">

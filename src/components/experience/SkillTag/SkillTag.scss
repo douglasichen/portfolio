@@ -1,10 +1,9 @@
-@use "../../../App.scss"; // Adjusted path
+@use "../../../App.scss";
 
-// Styles for SkillTag component
 .skill-tag {
     padding: 0.5rem 1rem;
-    background-color: var(--color-dark); // Darker gray
-    border-radius: 9999px; // Full rounded
-    color: var(--color-accent); // Teal text
+    background-color: var(--color-dark);
+    border-radius: 9999px;
+    color: var(--color-accent);
     font-size: 0.875rem;
 }

@@ -1,4 +1,4 @@
-@use "../../../App.scss"; // Adjusted path
+@use "../../../App.scss";
 
 // Styles for JobTitle component
 .job-title {
@@ -14,16 +14,7 @@
         transition: color 150ms ease;
 
         &.hovered {
-            color: var(--color-accent); // Teal color
-        }
-    }
-
-    svg {
-        transition: color 150ms ease;
-        color: var(--color-lightest);
-
-        &.hovered {
-            color: var(--color-medium); // Teal color
+            color: var(--color-accent);
         }
     }
 }

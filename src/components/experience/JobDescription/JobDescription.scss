@@ -1,8 +1,7 @@
-@use "../../../App.scss"; // Adjusted path
+@use "../../../App.scss";
 
-// Styles for JobDescription component
 .job-description {
     font-size: 1.125rem;
     margin-bottom: 1.5rem;
-    color: var(--color-white); // Light gray text
+    color: var(--color-white);
 }

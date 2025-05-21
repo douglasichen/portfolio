@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.scss";
 import ExperienceList from "./components/experience";
 
@@ -51,10 +51,15 @@ function App() {
         // Using { passive: false } if we intend to use event.preventDefault() inside the handler.
         // If event.preventDefault() is not used, { passive: true } can be slightly more performant.
         // Now that we are using preventDefault, passive must be false.
-        leftPane.addEventListener("wheel", handleUniversalWheelOnLeftPane, { passive: false });
+        leftPane.addEventListener("wheel", handleUniversalWheelOnLeftPane, {
+            passive: false,
+        });
 
         return () => {
-            leftPane.removeEventListener("wheel", handleUniversalWheelOnLeftPane);
+            leftPane.removeEventListener(
+                "wheel",
+                handleUniversalWheelOnLeftPane,
+            );
         };
     }, [isMobileView, leftPaneRef, rightPaneRef]); // Added refs to dependency array for correctness
 

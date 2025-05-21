@@ -1,2 +1,2 @@
-export * from './TimeFrame';
-export { default } from './TimeFrame'; // Default export
+export * from "./TimeFrame";
+export { default } from "./TimeFrame";
