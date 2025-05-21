@@ -26,42 +26,47 @@ function App() {
     }, []);
 
     useEffect(() => {
-        const leftPane = leftPaneRef.current;
         const rightPane = rightPaneRef.current;
+        const leftPane = leftPaneRef.current; // For mobile check: is event on top bar?
 
-        if (!leftPane || !rightPane) {
+        // If rightPane isn't there, we can't scroll it.
+        if (!rightPane) {
             return;
         }
 
-        const handleUniversalWheelOnLeftPane = (event: WheelEvent) => {
-            // Prevent the left pane itself from scrolling (e.g. elastic scroll on macOS or if content overflows)
-            event.preventDefault();
-
+        const handleGlobalWheelScroll = (event: WheelEvent) => {
             if (isMobileView) {
-                // On mobile, the "leftPane" is the top bar.
-                // Scrolling (e.g., via touch translated to wheel) on it should scroll the main window content.
+                // On mobile, scroll the main window.
+                // If the event originated on the top bar (leftPane), prevent its default scroll behavior
+                // to ensure the window scrolls instead of an elastic scroll on the bar itself.
+                if (leftPane && leftPane.contains(event.target as Node)) {
+                    event.preventDefault();
+                }
                 window.scrollBy(0, event.deltaY);
-            } else {
-                // On desktop, scroll the right pane.
-                rightPane.scrollTop += event.deltaY;
+            } else { // Desktop view
+                // Check if the event originated within the right pane or its children
+                const isTargetInRightPane = rightPane.contains(event.target as Node);
+
+                if (!isTargetInRightPane) {
+                    // If the scroll event is outside the right pane (e.g., on left pane, or body),
+                    // prevent default action (like scrolling the body or an elastic scroll on left pane)
+                    // and redirect the scroll to the right pane.
+                    event.preventDefault();
+                    rightPane.scrollTop += event.deltaY;
+                }
+                // If the scroll event is inside the right pane, do nothing.
+                // Let the browser handle native scrolling for the right pane if it's scrollable.
             }
         };
 
-        // Attach a single wheel listener to the left pane.
-        // Using { passive: false } if we intend to use event.preventDefault() inside the handler.
-        // If event.preventDefault() is not used, { passive: true } can be slightly more performant.
-        // Now that we are using preventDefault, passive must be false.
-        leftPane.addEventListener("wheel", handleUniversalWheelOnLeftPane, {
-            passive: false,
-        });
+        // Attach listener to the document to capture all wheel events
+        // { passive: false } is crucial because we call event.preventDefault().
+        document.addEventListener("wheel", handleGlobalWheelScroll, { passive: false });
 
         return () => {
-            leftPane.removeEventListener(
-                "wheel",
-                handleUniversalWheelOnLeftPane,
-            );
+            document.removeEventListener("wheel", handleGlobalWheelScroll);
         };
-    }, [isMobileView, leftPaneRef, rightPaneRef]); // Added refs to dependency array for correctness
+    }, [isMobileView, rightPaneRef, leftPaneRef]); // Dependencies: isMobileView, and refs for panes
 
     return (
         <div className="layout">
