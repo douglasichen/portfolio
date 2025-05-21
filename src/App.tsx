@@ -1,10 +1,29 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./App.scss";
 import ExperienceList from "./components/experience";
+
+const MOBILE_VIEW_THRESHOLD = 1050; // from App.scss
 
 function App() {
     const leftPaneRef = useRef<HTMLDivElement>(null);
     const rightPaneRef = useRef<HTMLDivElement>(null);
+    // touchStartYRef is removed
+    const [isMobileView, setIsMobileView] = useState(
+        window.innerWidth <= MOBILE_VIEW_THRESHOLD,
+    );
+
+    useEffect(() => {
+        const checkMobileView = () => {
+            setIsMobileView(window.innerWidth <= MOBILE_VIEW_THRESHOLD);
+        };
+
+        window.addEventListener("resize", checkMobileView);
+        checkMobileView(); // Initial check
+
+        return () => {
+            window.removeEventListener("resize", checkMobileView);
+        };
+    }, []);
 
     useEffect(() => {
         const leftPane = leftPaneRef.current;
@@ -14,39 +33,30 @@ function App() {
             return;
         }
 
-        const handleLeftPaneWheel = (event: WheelEvent) => {
-            // event.preventDefault(); // Prevent left pane from scrolling itself.
-            // event.stopPropagation(); // Prevent this event from bubbling to the document listener.
-            rightPane.scrollTop += event.deltaY;
-        };
+        const handleUniversalWheelOnLeftPane = (event: WheelEvent) => {
+            // Prevent the left pane itself from scrolling (e.g. elastic scroll on macOS or if content overflows)
+            event.preventDefault();
 
-        const handleDocumentWheel = (event: WheelEvent) => {
-            const target = event.target as Node;
-
-            // If the event originated from within the right pane, let its native scroll behavior occur.
-            if (rightPane.contains(target)) {
-                return; 
+            if (isMobileView) {
+                // On mobile, the "leftPane" is the top bar.
+                // Scrolling (e.g., via touch translated to wheel) on it should scroll the main window content.
+                window.scrollBy(0, event.deltaY);
+            } else {
+                // On desktop, scroll the right pane.
+                rightPane.scrollTop += event.deltaY;
             }
-
-            // For any other scroll event (not on right pane, and not on left pane because that's stopped),
-            // prevent its default action and scroll the right pane.
-            event.preventDefault(); 
-            rightPane.scrollTop += event.deltaY;
         };
 
-        // Attach listener to the left pane.
-        // { passive: false } is crucial for preventDefault() to work.
-        leftPane.addEventListener('wheel', handleLeftPaneWheel, { passive: false });
-
-        // Attach listener to the document's root element.
-        // This will catch wheel events that bubble up from elements not handled above.
-        document.documentElement.addEventListener('wheel', handleDocumentWheel, { passive: false });
+        // Attach a single wheel listener to the left pane.
+        // Using { passive: false } if we intend to use event.preventDefault() inside the handler.
+        // If event.preventDefault() is not used, { passive: true } can be slightly more performant.
+        // Now that we are using preventDefault, passive must be false.
+        leftPane.addEventListener("wheel", handleUniversalWheelOnLeftPane, { passive: false });
 
         return () => {
-            leftPane.removeEventListener('wheel', handleLeftPaneWheel);
-            document.documentElement.removeEventListener('wheel', handleDocumentWheel);
+            leftPane.removeEventListener("wheel", handleUniversalWheelOnLeftPane);
         };
-    }, []);
+    }, [isMobileView, leftPaneRef, rightPaneRef]); // Added refs to dependency array for correctness
 
     return (
         <div className="layout">
