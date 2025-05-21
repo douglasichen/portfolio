@@ -23,7 +23,7 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
         zIndex: 50,
         borderRadius: "0.75rem",
         padding: "2rem",
-        backgroundColor: "#1f2937", // Same as job-card background color
+        backgroundColor: "var(--color-darkest)", // Same as job-card background color
         transition: "all 250ms ease-out",
         overflow: "hidden",
         overflowY: "auto", // Always allow scrolling
@@ -46,7 +46,6 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
                     ...prev,
                     top: "0",
                     height: "100vh",
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                 }));
             }, 25);
 

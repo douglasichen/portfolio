@@ -10,20 +10,20 @@
         font-size: 1.5rem;
         font-weight: 500;
         margin-right: 0.5rem;
-        color: white;
+        color: var(--color-white);
         transition: color 150ms ease;
 
         &.hovered {
-            color: #2dd4bf; // Teal color
+            color: var(--color-accent); // Teal color
         }
     }
 
     svg {
         transition: color 150ms ease;
-        color: white;
+        color: var(--color-lightest);
 
         &.hovered {
-            color: #2dd4bf; // Teal color
+            color: var(--color-medium); // Teal color
         }
     }
 }

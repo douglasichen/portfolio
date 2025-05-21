@@ -3,8 +3,8 @@
 // Styles for SkillTag component
 .skill-tag {
     padding: 0.5rem 1rem;
-    background-color: #374151; // Darker gray
+    background-color: var(--color-dark); // Darker gray
     border-radius: 9999px; // Full rounded
-    color: #2dd4bf; // Teal text
+    color: var(--color-lightest); // Teal text
     font-size: 0.875rem;
 }

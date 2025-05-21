@@ -4,7 +4,7 @@
 .job-card {
     width: 100%;
     padding: 2rem;
-    background-color: #1f2937; // Dark gray background
+    background-color: var(--color-darkest); // Dark gray background
     border-radius: 0.75rem;
     margin-bottom: 1.5rem;
     transition: opacity 150ms ease;
