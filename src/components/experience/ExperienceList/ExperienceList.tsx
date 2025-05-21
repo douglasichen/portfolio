@@ -85,9 +85,9 @@ const ExperienceList = () => {
       `}
             </style>
 
-            <h1 className="section-title">
+            {/* <h1 className="section-title">
                 Work Experience
-            </h1>
+            </h1> */}
 
             {jobExperiences.map((job) => (
                 <JobCard

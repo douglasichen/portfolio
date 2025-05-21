@@ -16,7 +16,7 @@
 }
 
 .expanded-card {
-    color: var(--color-lightest); // Light gray text
+    color: var(--color-white); // Light gray text
     // transition: opacity 250ms ease-out; // Removed from here
 
     .fadeable-content-section {
@@ -38,7 +38,7 @@
         font-size: 1.875rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
-        color: var(--color-white); // Teal color
+        color: var(--color-accent); // Teal color
     }
 
     .expanded-timerange {
