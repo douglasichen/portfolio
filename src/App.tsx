@@ -45,7 +45,9 @@ function App() {
                 window.scrollBy(0, event.deltaY);
             } else { // Desktop view
                 // Check if the event originated within the right pane or its children
-                const isTargetInRightPane = rightPane.contains(event.target as Node);
+                const isTargetInRightPane = rightPane.contains(
+                    event.target as Node,
+                );
 
                 if (!isTargetInRightPane) {
                     // If the scroll event is outside the right pane (e.g., on left pane, or body),
@@ -61,7 +63,9 @@ function App() {
 
         // Attach listener to the document to capture all wheel events
         // { passive: false } is crucial because we call event.preventDefault().
-        document.addEventListener("wheel", handleGlobalWheelScroll, { passive: false });
+        document.addEventListener("wheel", handleGlobalWheelScroll, {
+            passive: false,
+        });
 
         return () => {
             document.removeEventListener("wheel", handleGlobalWheelScroll);
