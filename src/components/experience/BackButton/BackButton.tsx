@@ -9,7 +9,7 @@ const BackButton: React.FC<BackButtonProps> = ({ onClick }) => (
         className="back-button"
     >
         <ChevronLeft size={20} />
-        <span>Back to all experiences</span>
+        <span>Back</span>
     </button>
 );
 
