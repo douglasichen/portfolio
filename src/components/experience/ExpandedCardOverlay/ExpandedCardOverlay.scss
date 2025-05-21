@@ -17,6 +17,9 @@
 
 .expanded-card {
     color: var(--color-white); // Light gray text
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    scrollbar-width: none;
     // transition: opacity 250ms ease-out; // Removed from here
 
     .fadeable-content-section {

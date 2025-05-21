@@ -3,6 +3,7 @@
 // Styles for TimeFrame component
 .time-frame {
     margin-bottom: 1rem;
+    margin-right: 3rem;
 
     @media (min-width: App.$mobile-view-transition-threshold) {
         width: 20%;
