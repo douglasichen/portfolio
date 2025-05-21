@@ -3,6 +3,7 @@ import BackButton from "../BackButton";
 import SkillTags from "../SkillTags";
 import DetailSection from "../DetailSection";
 import { ExpandedCardOverlayProps } from "../../../types/experience";
+import useBodyScrollLock from "../../../hooks/useBodyScrollLock"; // Import the custom hook
 import "./ExpandedCardOverlay.scss";
 
 const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
@@ -20,7 +21,12 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
         height: rect.height,
     });
 
+    // Use the custom hook to manage body scroll lock
+    // Lock scroll when the card is not closing (i.e., it's opening or open)
+    useBodyScrollLock(!isClosing);
+
     useEffect(() => {
+        // This useEffect now only handles the card's animation and sizing
         if (!isClosing) {
             // First set max height to viewport height to enable scrolling if needed
             document.documentElement.style.setProperty(
@@ -28,7 +34,7 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
                 `${window.innerHeight}px`,
             );
 
-            // may need to wrap this in timer (see past commits) if it fails
+            // Animate card to full screen
             setStyle((prev) => ({
                 ...prev,
                 top: "0",
