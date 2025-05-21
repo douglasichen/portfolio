@@ -1,0 +1,9 @@
+@use "../../../App.scss";
+
+.skill-tag {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-dark);
+    border-radius: 9999px;
+    color: var(--color-accent);
+    font-size: 0.875rem;
+}

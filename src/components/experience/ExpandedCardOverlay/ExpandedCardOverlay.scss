@@ -1,0 +1,77 @@
+@use "../../../App.scss";
+
+$fade-time: 250ms;
+
+.overlay-background {
+    // fixed and inset 0 allow exiting by clicking the overlay background (outside the popup)
+    position: fixed;
+    inset: 0;
+}
+
+.expanded-card {
+    position: fixed;
+    color: var(--color-white); // Light gray text
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    scrollbar-width: none;
+    background-color: var(--color-darkest);
+    transition: all 250ms ease-out;
+    overflow: auto;
+
+    .fadeable-content-section {
+        opacity: 1;
+        transition: opacity $fade-time ease-out;
+    }
+
+    .content-fade-out {
+        opacity: 0;
+    }
+
+    .back-button-container {
+        transition: opacity $fade-time ease;
+    }
+
+    .expanded-title {
+        font-size: 1.875rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: var(--color-accent);
+    }
+
+    .expanded-timerange {
+        font-size: 1.125rem;
+        margin-bottom: 1.5rem;
+        color: var(--color-white);
+    }
+
+    .expanded-main-content {
+        margin-bottom: 2rem;
+
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+        }
+        // Note: SkillTags styles are in SkillTags/SkillTags.scss
+    }
+
+    .expanded-details {
+        margin-top: 2.5rem;
+        border-top: 1px solid var(--color-dark); // Gray border
+        padding-top: 1.5rem;
+        // Removed .hidden as opacity is handled by content-fade-out
+        // Note: DetailSection styles are in DetailSection/DetailSection.scss
+    }
+}
+
+// New classes to prevent body scrolling
+.body-modal-open {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+    overscroll-behavior-y: contain !important;
+}
+
+.html-modal-open {
+    overflow: hidden !important;
+    overscroll-behavior-y: contain !important;
+}

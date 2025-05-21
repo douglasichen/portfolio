@@ -1,0 +1,16 @@
+@use "../../../App.scss";
+
+.time-frame {
+    margin-bottom: 1rem;
+    margin-right: 3rem;
+
+    @media (min-width: App.$mobile-view-transition-threshold) {
+        width: 20%;
+        margin-bottom: 0;
+    }
+
+    p {
+        font-size: 0.9rem;
+        color: var(--color-lightest);
+    }
+}

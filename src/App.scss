@@ -51,6 +51,10 @@ $debug-outline-color-3: rgba(255, 0, 0, 0.5);
     text-align: left;
 }
 
+.left-pane h1 {
+    color: var(--color-white);
+}
+
 .left-pane h2 {
     margin-top: $left-pane-text-vertical-separation;
     margin-bottom: $left-pane-text-vertical-separation;
