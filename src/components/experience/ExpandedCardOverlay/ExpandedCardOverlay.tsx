@@ -1,37 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
-import BackButton from "../BackButton"; // Adjusted path
-import SkillTags from "../SkillTags"; // Adjusted path
-import DetailSection from "../DetailSection"; // Adjusted path
-import { ExpandedCardOverlayProps } from "../../../types/experience"; // Adjusted path
-import './ExpandedCardOverlay.scss'; // New SCSS import
+import BackButton from "../BackButton";
+import SkillTags from "../SkillTags";
+import DetailSection from "../DetailSection";
+import { ExpandedCardOverlayProps } from "../../../types/experience";
+import './ExpandedCardOverlay.scss';
 
 const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
     job,
     rect,
-    mainContainerRect,
     onClose,
     isAnimating,
     isClosing,
 }) => {
     const contentRef = useRef<HTMLDivElement>(null);
     const [style, setStyle] = useState<React.CSSProperties>({
-        position: "fixed",
-        top: `${rect.top}px`,
-        left: `${rect.left}px`,
-        width: `${rect.width}px`, // Keep the same width as the original card
-        height: `${rect.height}px`,
-        zIndex: 50,
-        borderRadius: "0.75rem",
-        padding: "2rem",
-        backgroundColor: "var(--color-darkest)", // Same as job-card background color
-        transition: "all 250ms ease-out",
-        overflow: "hidden",
-        overflowY: "auto", // Always allow scrolling
+        top: rect.top,
+        left: rect.left,
+        width: rect.width,
+        height: rect.height,
     });
 
-    // Animation sequence
     useEffect(() => {
-        // Only run expansion if not closing
         if (!isClosing) {
             // First set max height to viewport height to enable scrolling if needed
             document.documentElement.style.setProperty(
@@ -39,53 +28,35 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
                 `${window.innerHeight}px`,
             );
 
-            // Start with the card at its original position
-            const timer1 = setTimeout(() => {
-                // Expand to full height of the page, keeping width the same
-                setStyle((prev) => ({
-                    ...prev,
-                    top: "0",
-                    height: "100vh",
-                }));
-            }, 25);
-
-            return () => {
-                clearTimeout(timer1);
-            };
-        } else {
-            // If closing, shrink back to original size
+            // may need to wrap this in timer (see past commits) if it fails
             setStyle((prev) => ({
                 ...prev,
-                top: `${rect.top}px`,
-                height: `${rect.height}px`,
-                boxShadow: "none",
+                top: "0",
+                height: "100vh",
+            }));
+        } else {
+            setStyle((prev) => ({
+                ...prev,
+                top: rect.top,
+                height: rect.height,
             }));
         }
     }, [isClosing, rect]);
 
-    // Make sure back button opacity is managed correctly
-    const backButtonOpacity = isAnimating || isClosing
-        ? "opacity-0"
-        : "opacity-100";
-    
     const contentOpacityClass = isClosing ? "content-fade-out" : "";
 
     return (
         <>
-            {/* Semi-transparent background overlay */}
             <div
                 className={`overlay-background ${isClosing ? "closing" : ""}`}
                 onClick={onClose}
             />
 
-            {/* Expanded card */}
             <div style={style} className="expanded-card" ref={contentRef}>
-                {/* Back button with its own opacity transition */}
-                <div className={`back-button-container ${backButtonOpacity}`}>
+                <div className={`back-button-container ${contentOpacityClass}`}>
                     <BackButton onClick={onClose} />
                 </div>
 
-                {/* Main content - always visible */}
                 <div className={`fadeable-content-section ${contentOpacityClass}`}>
                     <h2 className="expanded-title">
                         {job.title} · {job.company}
@@ -98,7 +69,6 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
                     </div>
                 </div>
 
-                {/* Details section - always rendered, only hidden when closing */}
                 <div
                     className={`expanded-details fadeable-content-section ${contentOpacityClass}`}
                 >

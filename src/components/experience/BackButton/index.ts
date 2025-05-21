@@ -1,2 +1,2 @@
 export * from './BackButton';
-export { default } from './BackButton'; // Default export
+export { default } from './BackButton';

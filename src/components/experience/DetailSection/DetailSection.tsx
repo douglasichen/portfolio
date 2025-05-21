@@ -1,5 +1,5 @@
 import React from "react";
-import { DetailSectionProps } from "../../../types/experience"; // Adjusted import path
+import { DetailSectionProps } from "../../../types/experience";
 import './DetailSection.scss';
 
 const DetailSection: React.FC<DetailSectionProps> = ({ title, items }) => (

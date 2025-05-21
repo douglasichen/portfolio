@@ -1,30 +1,26 @@
-@use "../../../App.scss"; // Adjusted path
+@use "../../../App.scss";
 
-// Styles for ExpandedCardOverlay component
+$fade-time: 250ms;
 
-// Expanded card styles
 .overlay-background {
+    // fixed and inset 0 allow exiting by clicking the overlay background (outside the popup)
     position: fixed;
     inset: 0;
-    // background-color: rgba(34, 40, 49, 0); // From --color-darkest #222831
-    transition: background-color 250ms ease;
-    z-index: 40;
-
-    // &.closing {
-    //     background-color: rgba(34, 40, 49, 0); // From --color-darkest #222831
-    // }
 }
 
 .expanded-card {
+    position: fixed;
     color: var(--color-white); // Light gray text
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     scrollbar-width: none;
-    // transition: opacity 250ms ease-out; // Removed from here
+    background-color: var(--color-darkest);
+    transition: all 250ms ease-out;
+    overflow: auto;
 
     .fadeable-content-section {
         opacity: 1;
-        transition: opacity 250ms ease-out;
+        transition: opacity $fade-time ease-out;
     }
 
     .content-fade-out {
@@ -32,22 +28,20 @@
     }
 
     .back-button-container {
-        transition: opacity 150ms ease;
-        // Note: The actual BackButton styles are in BackButton/BackButton.scss
-        // This container style is for layout/transitions within ExpandedCardOverlay
+        transition: opacity $fade-time ease;
     }
 
     .expanded-title {
         font-size: 1.875rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
-        color: var(--color-accent); // Teal color
+        color: var(--color-accent);
     }
 
     .expanded-timerange {
         font-size: 1.125rem;
         margin-bottom: 1.5rem;
-        color: var(--color-white); // Gray text
+        color: var(--color-white);
     }
 
     .expanded-main-content {

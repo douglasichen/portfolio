@@ -1,2 +1,2 @@
 export * from './ExpandedCardOverlay';
-export { default } from './ExpandedCardOverlay'; // Default export
+export { default } from './ExpandedCardOverlay';

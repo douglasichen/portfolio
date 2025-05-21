@@ -1,2 +1,2 @@
 export * from './DetailSection';
-export { default } from './DetailSection'; // Default export
+export { default } from './DetailSection';
