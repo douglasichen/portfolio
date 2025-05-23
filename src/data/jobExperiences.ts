@@ -5,11 +5,11 @@ const jobExperiences: JobExperience[] = [
     {
         id: 1,
         timeRange: "2024 — PRESENT",
-        title: "Senior Frontend Engineer, Accessibility",
-        company: "Klaviyo",
+        title: "Software Engineer Intern",
+        company: "InsideDesk",
         description:
             "Build and maintain critical components used to construct Klaviyo's frontend, across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices in web accessibility.",
-        skills: ["JavaScript", "TypeScript", "React", "Storybook"],
+        skills: ["AWS", "TypeScript", "Python", "Web Scraping"],
         details: {
             achievements: [
                 "Led accessibility initiative that increased WCAG compliance from 76% to 98% across the platform",

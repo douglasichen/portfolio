@@ -1,18 +1,18 @@
 .contact-links-container {
-  display: flex;
-  gap: 15px; // Space between icons
-  margin-top: 15px; // Space above the icons
-  margin-bottom: 15px; // Space below the icons
+    display: flex;
+    gap: 15px; // Space between icons
+    margin-top: 15px; // Space above the icons
+    margin-bottom: 15px; // Space below the icons
 
-  .contact-link {
-    svg {
-      width: 24px; // Standard icon size
-      height: 24px;
-      transition: opacity 0.2s ease-in-out;
+    .contact-link {
+        svg {
+            width: 24px; // Standard icon size
+            height: 24px;
+            transition: opacity 0.2s ease-in-out;
 
-      &:hover {
-        opacity: 0.7; // Slight fade on hover for interactivity
-      }
+            &:hover {
+                opacity: 0.7; // Slight fade on hover for interactivity
+            }
+        }
     }
-  }
 }

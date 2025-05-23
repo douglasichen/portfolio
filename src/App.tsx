@@ -3,6 +3,7 @@ import "./App.scss";
 import ExperienceList from "./components/experience";
 import { AboutMe } from "./components/about";
 import { ContactLinks } from "./components/contact";
+import { Footer } from "./components/footer";
 
 const MOBILE_VIEW_THRESHOLD = 1050; // from App.scss
 
@@ -80,13 +81,14 @@ function App() {
                 <div className="pane-container">
                     <div className="left-pane" ref={leftPaneRef}>
                         <h1>Douglas Chen</h1>
-                        <h2>Back End Engineer</h2>
-                        <p>I love solving problems</p>
+                        <h2>Software Engineer</h2>
+                        <p>Hire me. Trust me bro.</p>
                         <ContactLinks />
                     </div>
                     <div className="right-pane" ref={rightPaneRef}>
                         <AboutMe />
                         <ExperienceList />
+                        <Footer />
                     </div>
                 </div>
             </div>
