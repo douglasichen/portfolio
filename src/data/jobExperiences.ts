@@ -30,6 +30,22 @@ const jobExperiences: JobExperience[] = [
                 "NVDA",
                 "axe DevTools",
             ],
+            media: [
+                {
+                    type: "youtube",
+                    url: "https://www.youtube.com/watch?v=G9smB9Cr1bI&ab_channel=RNSFDev",
+                    title: "Component Library Demo",
+                    description:
+                        "Demonstration of the accessibility-first component library we built",
+                },
+                {
+                    type: "image",
+                    url: "https://cdn.pixabay.com/photo/2016/06/20/13/16/greengrocers-1468809_1280.jpg",
+                    title: "Dashboard Interface",
+                    description:
+                        "Screenshot of the improved dashboard with accessibility features",
+                },
+            ],
         },
     },
     {

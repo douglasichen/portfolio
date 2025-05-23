@@ -55,10 +55,18 @@ export interface JobCardProps {
     expandedId: number | null;
 }
 
+export interface MediaItem {
+    type: "youtube" | "image";
+    url: string;
+    title?: string;
+    description?: string;
+}
+
 export interface JobDetails {
     achievements: string[];
     projects: string[];
     technologies: string[];
+    media?: MediaItem[];
 }
 
 export interface JobExperience {
@@ -69,4 +77,8 @@ export interface JobExperience {
     description: string;
     skills: string[];
     details: JobDetails;
+}
+
+export interface MediaComponentProps {
+    media: MediaItem[];
 }
