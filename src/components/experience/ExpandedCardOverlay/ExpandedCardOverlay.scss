@@ -15,6 +15,7 @@ $fade-time: 250ms;
     padding-bottom: 2rem;
     scrollbar-width: none;
     background-color: var(--color-darkest);
+    z-index: 1;
     transition: all 250ms ease-out;
     overflow: auto;
 
