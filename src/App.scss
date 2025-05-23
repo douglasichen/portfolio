@@ -3,7 +3,7 @@ $mobile-view-transition-threshold: 1050px;
 $layout-horizontal-padding: 50px;
 $pane-vertical-padding: 100px;
 
-$left-pane-width: 550px;
+$left-pane-width: 450px;
 $left-pane-text-vertical-separation: 12px;
 
 $right-pane-width: 700px;
@@ -49,6 +49,11 @@ $debug-outline-color-3: rgba(255, 0, 0, 0.5);
     padding-top: $pane-vertical-padding;
     padding-bottom: $pane-vertical-padding;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: sticky;
+    top: 0;
 }
 
 .left-pane h1 {
@@ -92,6 +97,9 @@ $debug-outline-color-3: rgba(255, 0, 0, 0.5);
     .left-pane {
         margin: 0;
         padding: 50px 0;
+        display: block;
+        height: auto;
+        position: static;
     }
 
     .right-pane {

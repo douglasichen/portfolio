@@ -4,6 +4,7 @@ import ExperienceList from "./components/experience";
 import { AboutMe } from "./components/about";
 import { ContactLinks } from "./components/contact";
 import { Footer } from "./components/footer";
+import { ResumeButton } from "./components/resume";
 
 const MOBILE_VIEW_THRESHOLD = 1050; // from App.scss
 
@@ -83,6 +84,7 @@ function App() {
                         <h1>Douglas Chen</h1>
                         <h2>Software Engineer</h2>
                         <p>Hire me. Trust me bro.</p>
+                        <ResumeButton />
                         <ContactLinks />
                     </div>
                     <div className="right-pane" ref={rightPaneRef}>
