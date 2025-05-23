@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import BackButton from "../BackButton";
 import SkillTags from "../SkillTags";
 import DetailSection from "../DetailSection";
+import MediaComponent from "../MediaComponent";
 import { ExpandedCardOverlayProps } from "../../../types/experience";
 import useBodyScrollLock from "../../../hooks/useBodyScrollLock"; // Import the custom hook
 import "./ExpandedCardOverlay.scss";
@@ -76,6 +77,9 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
                         <SkillTags skills={job.skills} />
                     </div>
                 </div>
+                {job.details.media && job.details.media.length > 0 && (
+                    <MediaComponent media={job.details.media} />
+                )}
 
                 <div
                     className={`expanded-details fadeable-content-section ${contentOpacityClass}`}
