@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import "./App.scss";
 import ExperienceList from "./components/experience";
+import { AboutMe } from "./components/about";
+import { ContactLinks } from "./components/contact";
 
 const MOBILE_VIEW_THRESHOLD = 1050; // from App.scss
 
@@ -80,8 +82,10 @@ function App() {
                         <h1>Douglas Chen</h1>
                         <h2>Back End Engineer</h2>
                         <p>I love solving problems</p>
+                        <ContactLinks />
                     </div>
                     <div className="right-pane" ref={rightPaneRef}>
+                        <AboutMe />
                         <ExperienceList />
                     </div>
                 </div>
