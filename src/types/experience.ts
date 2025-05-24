@@ -62,10 +62,13 @@ export interface MediaItem {
     description?: string;
 }
 
+export interface DetailSection {
+    title: string;
+    points: string[];
+}
+
 export interface JobDetails {
-    achievements: string[];
-    projects: string[];
-    technologies: string[];
+    details: DetailSection[];
     media?: MediaItem[];
 }
 

@@ -84,18 +84,13 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
                 <div
                     className={`expanded-details fadeable-content-section ${contentOpacityClass}`}
                 >
-                    <DetailSection
-                        title="Key Achievements"
-                        items={job.details.achievements}
-                    />
-                    <DetailSection
-                        title="Projects"
-                        items={job.details.projects}
-                    />
-                    <DetailSection
-                        title="Technologies"
-                        items={[job.details.technologies.join(", ")]}
-                    />
+                    {job.details.details.map((section, index) => (
+                        <DetailSection
+                            key={index}
+                            title={section.title}
+                            items={section.points}
+                        />
+                    ))}
                 </div>
             </div>
         </>

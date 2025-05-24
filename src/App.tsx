@@ -83,7 +83,7 @@ function App() {
                     <div className="left-pane" ref={leftPaneRef}>
                         <h1>Douglas Chen</h1>
                         <h2>Software Engineer</h2>
-                        <p>Hire me. Trust me bro.</p>
+                        <p>Computer Science @ UBC</p>
                         <ResumeButton />
                         <ContactLinks />
                     </div>
