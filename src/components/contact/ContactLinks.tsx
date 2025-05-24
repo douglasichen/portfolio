@@ -2,6 +2,7 @@ import React from "react";
 import "./ContactLinks.scss";
 // @ts-ignore
 import { siGithub, siLinkedin } from "https://esm.sh/simple-icons@13/icons";
+import { contactInfo } from "../../data/contactData";
 
 interface ContactLinkProps {
     href: string;
@@ -39,13 +40,13 @@ const ContactLinks: React.FC = () => {
     return (
         <div className="contact-links-container">
             <ContactLink
-                href="https://github.com/douglasichen"
+                href={contactInfo.githubUrl}
                 svgPath={githubPath}
                 title={siGithub.title}
                 fillColor={`var(--color-white)`}
             />
             <ContactLink
-                href="https://www.linkedin.com/in/douglas-chen-19bb96210/"
+                href={contactInfo.linkedinUrl}
                 svgPath={linkedinPath}
                 title={siLinkedin.title}
                 fillColor={`var(--color-white)`}

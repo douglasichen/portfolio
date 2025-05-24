@@ -6,8 +6,11 @@ const AboutMe: React.FC = () => {
     return (
         <div className="about-me-section">
             {aboutMeLines.map((line, index) => (
-                <p key={index} className="about-me-line">
-                    {line}
+                <p
+                    key={index}
+                    dangerouslySetInnerHTML={{ __html: line }}
+                    className="about-me-line"
+                >
                 </p>
             ))}
         </div>

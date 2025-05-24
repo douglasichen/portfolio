@@ -1,3 +1,5 @@
+import { contactInfo } from "./contactData";
+
 export const aboutMeLines: string[] = [
     "I'm a curious student inspired by the magic of technology.",
 
@@ -7,5 +9,5 @@ export const aboutMeLines: string[] = [
 
     "Whether it's through lines of code or notes on a keyboard, I'm always looking for ways to learn, create, and grow.",
 
-    "Feel free to chat with me on LinkedIn or reach out via douglas@ichen.ca.",
+    `Feel free to chat with me on <a href="${contactInfo.linkedinUrl}" target="_blank" rel="noopener noreferrer">LinkedIn</a> or reach out via <a href="mailto:${contactInfo.email}">${contactInfo.email}</a>.`,
 ];

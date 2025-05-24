@@ -15,9 +15,9 @@ const jobExperiences: JobExperience[] = [
                 {
                     title: "Key Achievements",
                     points: [
-                        "Led accessibility initiative that increased WCAG compliance from 76% to 98% across the platform",
+                        "Led accessibility initiative that increased <a href='https://www.w3.org/WAI/WCAG21/quickref/' target='_blank' rel='noopener noreferrer'>WCAG compliance</a> from 76% to 98% across the platform",
                         "Developed reusable component library with built-in accessibility features used by 40+ engineers",
-                        "Implemented automated accessibility testing in CI/CD pipeline, reducing accessibility bugs by 64%",
+                        "Implemented automated <a href='https://github.com/dequelabs/axe-core' target='_blank' rel='noopener noreferrer'>accessibility testing</a> in CI/CD pipeline, reducing accessibility bugs by 64%",
                     ],
                 },
                 {

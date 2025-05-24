@@ -6,7 +6,12 @@ const DetailSection: React.FC<DetailSectionProps> = ({ title, items }) => (
     <div className="detail-section">
         <h3>{title}</h3>
         <ul>
-            {items.map((item, index) => <li key={index}>{item}</li>)}
+            {items.map((item, index) => (
+                <li
+                    key={index}
+                    dangerouslySetInnerHTML={{ __html: item }}
+                />
+            ))}
         </ul>
     </div>
 );
