@@ -23,7 +23,6 @@
 
         .media-description {
             margin: 0.75rem 0 0 0;
-            font-size: 0.875rem;
             color: var(--color-white);
             opacity: 0.7;
             line-height: 1.4;
@@ -61,27 +60,6 @@
                 display: block;
                 object-fit: cover;
             }
-        }
-    }
-
-    // Responsive design
-    @media (min-width: 768px) {
-        .media-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .media-item {
-            .media-title {
-                font-size: 1.1rem;
-            }
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .media-grid {
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         }
     }
 }
