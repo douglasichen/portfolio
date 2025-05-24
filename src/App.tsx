@@ -85,6 +85,10 @@ function App() {
                         <h2>Software Engineer</h2>
                         <p>Computer Science @ UBC</p>
                         <ResumeButton />
+                        <div className="mobile-resume-contact-container">
+                            <ResumeButton />
+                            <ContactLinks />
+                        </div>
                         <ContactLinks />
                     </div>
                     <div className="right-pane" ref={rightPaneRef}>
