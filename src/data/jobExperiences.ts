@@ -21,36 +21,36 @@ const jobExperiences: JobExperience[] = [
                         "Used SNS to connect SES to Lambdas, routing and processing email data to a serverless redis instance hosted on ElastiCache.",
                         "Setup EC2 instance for developers to access AWS facing resources",
                         "Created easy to follow visual and written documentation to ensure low maintenance cost and frictionless adoption",
-                    ]
-                }
-            //     {
-            //         title: "Key Achievements",
-            //         points: [
-            //             "Led accessibility initiative that increased <a href='https://www.w3.org/WAI/WCAG21/quickref/' target='_blank' rel='noopener noreferrer'>WCAG compliance</a> from 76% to 98% across the platform",
-            //             "Developed reusable component library with built-in accessibility features used by 40+ engineers",
-            //             "Implemented automated <a href='https://github.com/dequelabs/axe-core' target='_blank' rel='noopener noreferrer'>accessibility testing</a> in CI/CD pipeline, reducing accessibility bugs by 64%",
-            //         ],
-            //     },
-            //     {
-            //         title: "Projects",
-            //         points: [
-            //             "Component System Redesign - Led frontend architecture for accessibility-first design system",
-            //             "Keyboard Navigation Overhaul - Improved keyboard navigation throughout the application",
-            //         ],
-            //     },
-            //     {
-            //         title: "Technologies",
-            //         points: [
-            //             "React",
-            //             "TypeScript",
-            //             "Jest",
-            //             "React Testing Library",
-            //             "Storybook",
-            //             "Figma",
-            //             "NVDA",
-            //             "axe DevTools",
-            //         ],
-            //     },
+                    ],
+                },
+                //     {
+                //         title: "Key Achievements",
+                //         points: [
+                //             "Led accessibility initiative that increased <a href='https://www.w3.org/WAI/WCAG21/quickref/' target='_blank' rel='noopener noreferrer'>WCAG compliance</a> from 76% to 98% across the platform",
+                //             "Developed reusable component library with built-in accessibility features used by 40+ engineers",
+                //             "Implemented automated <a href='https://github.com/dequelabs/axe-core' target='_blank' rel='noopener noreferrer'>accessibility testing</a> in CI/CD pipeline, reducing accessibility bugs by 64%",
+                //         ],
+                //     },
+                //     {
+                //         title: "Projects",
+                //         points: [
+                //             "Component System Redesign - Led frontend architecture for accessibility-first design system",
+                //             "Keyboard Navigation Overhaul - Improved keyboard navigation throughout the application",
+                //         ],
+                //     },
+                //     {
+                //         title: "Technologies",
+                //         points: [
+                //             "React",
+                //             "TypeScript",
+                //             "Jest",
+                //             "React Testing Library",
+                //             "Storybook",
+                //             "Figma",
+                //             "NVDA",
+                //             "axe DevTools",
+                //         ],
+                //     },
             ],
             media: [
                 // {
@@ -86,10 +86,10 @@ const jobExperiences: JobExperience[] = [
                         "Problem: To scrape data from large PDFs with slightly different formats, RAGs were not effective due to the overwhelming size and complexity of the PDFs.",
                         "Observation 1: The data to scrape is neatly labelled for humans to read, but difficult for RAGs to extract.",
                         "Observation 2: Models without RAG were great at extracting the data from a single page.",
-                        "Solution: I developed an algorithm to split the PDF data into configurable overlapping chunks and individually fed them into an AI model with a system prompt: “Extract the data into the following json format: { label0: [“...”, “...”], label1: [“...”, “...”] }, where the array of strings for a given label contains all the relevant information for the label. After generating all the separate json data, I combine them all to get labels mapped to large arrays. Finally, I have an AI summarize each array to a string, leaving us with the following information { label0: “all about label0 …”, label1: “all about label1” …}. This method proved to be far more effective than using RAG."
-                    ]
-                }
-            ]
+                        "Solution: I developed an algorithm to split the PDF data into configurable overlapping chunks and individually fed them into an AI model with a system prompt: “Extract the data into the following json format: { label0: [“...”, “...”], label1: [“...”, “...”] }, where the array of strings for a given label contains all the relevant information for the label. After generating all the separate json data, I combine them all to get labels mapped to large arrays. Finally, I have an AI summarize each array to a string, leaving us with the following information { label0: “all about label0 …”, label1: “all about label1” …}. This method proved to be far more effective than using RAG.",
+                    ],
+                },
+            ],
         },
     },
     {
@@ -129,10 +129,11 @@ const jobExperiences: JobExperience[] = [
     },
     {
         id: 4,
-        timeRange: "PROJECT",
+        timeRange: "SEP — DEC 2023",
         title: "Developer",
         company: "UBC Game Development Club",
-        description: "Engineered a procedural spider animation and behavior system that defined the horror game’s tension and atmosphere. Built a custom inverse kinematics solution to simulate realistic spider movement across uneven cave surfaces, including walls and ceilings.",
+        description:
+            "Engineered a procedural spider animation and behavior system that defined the horror game’s tension and atmosphere. Built a custom inverse kinematics solution to simulate realistic spider movement across uneven cave surfaces, including walls and ceilings.",
         skills: ["Godot Engine", "Linear Algebra"],
         details: {
             details: [],
@@ -146,12 +147,68 @@ const jobExperiences: JobExperience[] = [
                     type: "youtube",
                     title: "Technical Demo",
                     url: "https://youtu.be/j8emiSYQmcE",
-                }
-            ]
+                },
+            ],
         },
     },
     {
         id: 5,
+        timeRange: "PROJECT",
+        title: "Neural Network From Scratch",
+        description:
+            "Developed and trained a neural network from scratch in C++ using calculus, gradient descent and dynamic programming (92.5\% accuracy).",
+        skills: ["Machine Learning", "Algorithms", "C++"],
+        details: {
+            details: [
+                {
+                    title: "Magic",
+                    points: [
+                        "Starting at some abritary set of parameters (weights and biases), we must adjust them such that they minimize the cost function. To do this, backwards propogation is applied.",
+                        "Put simply, the partial derivative of the cost function with respect to each weight and bias is calculated. Each weight and bias is then shifted by d*k, where d is the corresponding derivative and k is the learning rate close to 0 (commonly 0.0001). This causes the cost function to decrease by a tiny amount.",
+                        "Through thousands of samples and training iterations, the parameters will eventually converge to a local minimum. Strange as it may seem, due to the gradual minimization of the cost function, the predictions the network produces gradually become the same as the correct answer.",
+                    ],
+                },
+                {
+                    title: "More",
+                    points: [
+                        "<a href='https://github.com/douglasichen/Neural-Network-From-Scratch' target='_blank'>View Source Code</a>"
+                    ]
+                }
+            ],
+            media: [
+                {
+                    type: "image",
+                    title: "Motivation",
+                    url: "https://i.postimg.cc/bvdWJJnx/boom.png",
+                    description:
+                        "Developing algorithms to complete complex tasks that are conventionally done by humans intrigued me. As I delved into the math behind the neural nets, I was amazed by how the calculus I've learned in highschool had such a creative and powerful application. To further my understanding of neural networks, I decided to write my own gradient descent algorithm in C++.",
+                },
+                {
+                    type: "image",
+                    title: "Configuration",
+                    url: "https://i.postimg.cc/6QdRCVCt/nn-config.png",
+                    description:
+                        "The algorithm is applied on a 784x10x10 model to predict hand written digits [0,9] as shown in the figure below. The MNIST data set is used for training and testing the model's accuracy.",
+                },
+                {
+                    type: "image",
+                    title: "ReLU Function",
+                    url: "https://i.postimg.cc/tgffVjdL/ReLU.webp",
+                    description:
+                        "Let every node hold two numbers, the bias and z-value (first layer lacks bias values). Let every edge hold one number, the weight. Initially, all bias and weights are randomized with numbers close to 0. The training process includes forwards and backwards propogation. Forward propogation begins with taking a sample from the data set (one sample has 784 numbers) and setting each node's z-value in the first layer to one of the 784 numbers. Each node's z-value in the second layer is calculated with the following equation: ReLU(SUM(z*w) + b), such that each (z,w) pair comes from an edge with weight 'w' is from some node with z-value 'z', and ReLU is an activation function used to provide non-linearities.",
+                },
+                {
+                    type: "image",
+                    title: "Learning",
+                    url: "https://i.postimg.cc/TwDsV4Ch/nn-3d-graph.gif",
+                    description:
+                        "A similar process repeats from layer 2 to 3 with the expection of normalizing the final layer z-values (make them add up to 100%). Note that in the last layer, the top node represents a prediction of 0 and the bottom 9. The final z-values represent the probability of the input represting some digit. the cost matrix is calculated as the difference between the correct answer and the predicted answer: A-Z, such that A is the correct probabilities and Z is the predicted probabilities. Next, a cost value is calculated based on how far each value in the cost matrix is from 0. The goal is to minimize this cost value. To do this, we first realize, this cost value is a multivariable function with parameters being the weight and biases of nodes and edges. To minimize the cost function, we can first think of the problem in 3 dimensions in GIF above.",
+                },
+            ],
+        },
+    },
+    {
+        id: 6,
         timeRange: "PROJECT",
         title: "Personal Website",
         company: "",
@@ -160,9 +217,38 @@ const jobExperiences: JobExperience[] = [
         skills: ["Deno", "React", "Vite", "Vercel", "AI-Assisted"],
         details: {
             details: [
+                {
+                    title: "More",
+                    points: [
+                        "<a href='https://github.com/douglasichen/portfolio' target='_blank'> View Source Code </a>",
+                    ]
+                }
             ],
         },
     },
+    {
+        id: 7,
+        timeRange: "PROJECT",
+        title: "Froggi",
+        skills: ["Gamemaker Studio 2", "Game Design", "Sound & Music Design"],
+        description: "Built as a birthday present for a special person. In this video game, you are a frog named Froggi. However, you are no ordinary frog. Froggi can grow a stronger and longer tongue to attack it's enemies. This unique frog specimen can also gain extra hops and health. As the only one left of your kind, you must fight off the evil monsters that come wave after wave. How long can you survive?",
+        details: {
+            details: [
+                {
+                    title: "More",
+                    points: ["<a href='https://github.com/douglasichen/Froggi' target='_blank'>View Source Code</a>"]
+                }
+            ],
+            media: [
+                {
+                    type: "youtube",
+                    title: "Demo",
+                    url: "https://www.youtube.com/watch?v=D4XT642DfuY",
+                }
+            ]
+        }
+
+    }
 ];
 
 export default jobExperiences;

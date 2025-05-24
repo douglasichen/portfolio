@@ -68,7 +68,8 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
                     className={`fadeable-content-section ${contentOpacityClass}`}
                 >
                     <h2 className="expanded-title">
-                        {job.title}{job.company ? ` · ${job.company}` : ''}
+                        {job.title}
+                        {job.company ? ` · ${job.company}` : ""}
                     </h2>
                     <p className="expanded-timerange">{job.timeRange}</p>
 
