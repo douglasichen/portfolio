@@ -19,10 +19,14 @@ const ExperienceList: React.FC<ExperienceListProps> = (
     );
     const [isAnimating, setIsAnimating] = useState(false);
     const [isClosing, setIsClosing] = useState(false);
+    const [supportsHover, setSupportsHover] = useState(false);
     const containerRef = useRef<HTMLDivElement>(null);
 
-    // Measure container dimensions on mount
+    // Detect hover support and measure container dimensions on mount
     useEffect(() => {
+        // Check if device supports hover
+        setSupportsHover(window.matchMedia('(hover: hover)').matches);
+        
         const element = containerRef.current;
         if (element) {
             setMainContainerRect(element.getBoundingClientRect());
@@ -30,13 +34,13 @@ const ExperienceList: React.FC<ExperienceListProps> = (
     }, []);
 
     const handleMouseEnter = (id: number) => {
-        if (expandedId === null) {
+        if (supportsHover && expandedId === null) {
             setHoveredId(id);
         }
     };
 
     const handleMouseLeave = () => {
-        if (expandedId === null) {
+        if (supportsHover && expandedId === null) {
             setHoveredId(null);
         }
     };
