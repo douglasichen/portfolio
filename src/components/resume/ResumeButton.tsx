@@ -3,7 +3,7 @@ import "./ResumeButton.scss";
 export const ResumeButton = () => {
     const handleResumeClick = () => {
         // Open the resume PDF in a new tab
-        window.open("/src/assets/resume.pdf", "_blank");
+        window.open("/public/resume.pdf", "_blank");
     };
 
     return (
