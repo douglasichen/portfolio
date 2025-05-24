@@ -26,6 +26,27 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
     // Lock scroll when the card is not closing (i.e., it's opening or open)
     useBodyScrollLock(!isClosing);
 
+    // Add global scroll event listener to redirect scroll to expanded card
+    useEffect(() => {
+        if (isClosing) return;
+
+        const handleGlobalScroll = (event: WheelEvent) => {
+            event.preventDefault();
+            
+            if (contentRef.current) {
+                const scrollAmount = event.deltaY;
+                contentRef.current.scrollTop += scrollAmount;
+            }
+        };
+
+        // Add event listener to capture all wheel events
+        document.addEventListener('wheel', handleGlobalScroll, { passive: false });
+
+        return () => {
+            document.removeEventListener('wheel', handleGlobalScroll);
+        };
+    }, [isClosing]);
+
     useEffect(() => {
         // This useEffect now only handles the card's animation and sizing
         if (!isClosing) {
