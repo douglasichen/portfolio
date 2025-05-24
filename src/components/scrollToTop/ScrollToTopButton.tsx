@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./ScrollToTopButton.scss";
 
 interface ScrollToTopButtonProps {
@@ -7,10 +7,10 @@ interface ScrollToTopButtonProps {
     isCardExpanded?: boolean;
 }
 
-const ScrollToTopButton: React.FC<ScrollToTopButtonProps> = ({ 
-    rightPaneRef, 
+const ScrollToTopButton: React.FC<ScrollToTopButtonProps> = ({
+    rightPaneRef,
     isMobileView,
-    isCardExpanded = false
+    isCardExpanded = false,
 }) => {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -33,16 +33,16 @@ const ScrollToTopButton: React.FC<ScrollToTopButtonProps> = ({
         };
 
         let scrollElement: Element | Window = window;
-        
+
         if (!isMobileView && rightPaneRef?.current) {
             scrollElement = rightPaneRef.current;
         }
 
-        scrollElement.addEventListener('scroll', handleScroll);
+        scrollElement.addEventListener("scroll", handleScroll);
         handleScroll(); // Check initial state
 
         return () => {
-            scrollElement.removeEventListener('scroll', handleScroll);
+            scrollElement.removeEventListener("scroll", handleScroll);
         };
     }, [rightPaneRef, isMobileView]);
 
@@ -51,14 +51,14 @@ const ScrollToTopButton: React.FC<ScrollToTopButtonProps> = ({
             // On mobile, scroll the window
             window.scrollTo({
                 top: 0,
-                behavior: 'smooth'
+                behavior: "smooth",
             });
         } else {
             // On desktop, scroll the right pane
             if (rightPaneRef?.current) {
                 rightPaneRef.current.scrollTo({
                     top: 0,
-                    behavior: 'smooth'
+                    behavior: "smooth",
                 });
             }
         }
@@ -66,7 +66,9 @@ const ScrollToTopButton: React.FC<ScrollToTopButtonProps> = ({
 
     return (
         <button
-            className={`scroll-to-top-button ${isVisible && !isCardExpanded ? 'visible' : ''}`}
+            className={`scroll-to-top-button ${
+                isVisible && !isCardExpanded ? "visible" : ""
+            }`}
             onClick={scrollToTop}
             aria-label="Scroll to top"
         >

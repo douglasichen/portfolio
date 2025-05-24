@@ -8,7 +8,9 @@ interface ExperienceListProps {
     onExpandedChange?: (isExpanded: boolean) => void;
 }
 
-const ExperienceList: React.FC<ExperienceListProps> = ({ onExpandedChange }) => {
+const ExperienceList: React.FC<ExperienceListProps> = (
+    { onExpandedChange },
+) => {
     const [hoveredId, setHoveredId] = useState<number | null>(null);
     const [expandedId, setExpandedId] = useState<number | null>(null);
     const [expandedRect, setExpandedRect] = useState<DOMRect | null>(null);

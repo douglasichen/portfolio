@@ -171,9 +171,9 @@ const jobExperiences: JobExperience[] = [
                 {
                     title: "More",
                     points: [
-                        "<a href='https://github.com/douglasichen/Neural-Network-From-Scratch' target='_blank'>View Source Code</a>"
-                    ]
-                }
+                        "<a href='https://github.com/douglasichen/Neural-Network-From-Scratch' target='_blank'>View Source Code</a>",
+                    ],
+                },
             ],
             media: [
                 {
@@ -221,8 +221,8 @@ const jobExperiences: JobExperience[] = [
                     title: "More",
                     points: [
                         "<a href='https://github.com/douglasichen/portfolio' target='_blank'> View Source Code </a>",
-                    ]
-                }
+                    ],
+                },
             ],
         },
     },
@@ -231,43 +231,49 @@ const jobExperiences: JobExperience[] = [
         timeRange: "PROJECT",
         title: "Froggi",
         skills: ["Gamemaker Studio 2", "Game Design", "Sound & Music Design"],
-        description: "Built as a birthday present for a special person. In this video game, you are a frog named Froggi. However, you are no ordinary frog. Froggi can grow a stronger and longer tongue to attack it's enemies. This unique frog specimen can also gain extra hops and health. As the only one left of your kind, you must fight off the evil monsters that come wave after wave. How long can you survive?",
+        description:
+            "Built as a birthday present for a special person. In this video game, you are a frog named Froggi. However, you are no ordinary frog. Froggi can grow a stronger and longer tongue to attack it's enemies. This unique frog specimen can also gain extra hops and health. As the only one left of your kind, you must fight off the evil monsters that come wave after wave. How long can you survive?",
         details: {
             details: [
                 {
                     title: "More",
-                    points: ["<a href='https://github.com/douglasichen/Froggi' target='_blank'>View Source Code</a>"]
-                }
+                    points: [
+                        "<a href='https://github.com/douglasichen/Froggi' target='_blank'>View Source Code</a>",
+                    ],
+                },
             ],
             media: [
                 {
                     type: "youtube",
                     title: "Demo",
                     url: "https://www.youtube.com/watch?v=D4XT642DfuY",
-                }
-            ]
-        }
+                },
+            ],
+        },
     },
     {
         id: 8,
         timeRange: "PROJECT",
         title: "Portal Wizard",
         skills: ["Java", "LibGDX", "JProfiler"],
-        description: "Portal Wizard is a Java-based dungeon game where you play as an ancient wizard who uses spatial magic—specifically, Portal Magic—to outsmart enemies and navigate a world full of danger. Embark on a journey to defeat Desmond Froid, the world’s most powerful fire wizard, using creativity, strategy, and dimensional manipulation.",
+        description:
+            "Portal Wizard is a Java-based dungeon game where you play as an ancient wizard who uses spatial magic—specifically, Portal Magic—to outsmart enemies and navigate a world full of danger. Embark on a journey to defeat Desmond Froid, the world’s most powerful fire wizard, using creativity, strategy, and dimensional manipulation.",
         details: {
             details: [
                 {
                     title: "More",
-                    points: ["<a href='https://github.com/douglasichen/PortalGame' target='_blank'>View Source Code</a>"]
-                }
+                    points: [
+                        "<a href='https://github.com/douglasichen/PortalGame' target='_blank'>View Source Code</a>",
+                    ],
+                },
             ],
             media: [
                 {
                     type: "youtube",
                     title: "Demo",
                     url: "https://youtu.be/4FzLd-FZOmw",
-                }
-            ]
+                },
+            ],
         },
     },
     {
@@ -275,22 +281,25 @@ const jobExperiences: JobExperience[] = [
         timeRange: "PROJECT",
         title: "Roblox Medieval Tycoon",
         skills: ["Roblox Dev", "Lua", "NPC"],
-        description: "Build your empire, command your army, and conquer your enemies. In this Roblox tycoon game, you don’t just collect resources—you lead. I designed and developed the core NPC system that lets players recruit soldiers, issue commands, and defend their territory in real time.",
+        description:
+            "Build your empire, command your army, and conquer your enemies. In this Roblox tycoon game, you don’t just collect resources—you lead. I designed and developed the core NPC system that lets players recruit soldiers, issue commands, and defend their territory in real time.",
         details: {
             details: [
                 {
                     title: "More",
-                    points: ["Co-created with <a href='https://www.linkedin.com/in/ianpe-thompson/'>Ian Thompson</a>",
-                        "<a href='https://www.roblox.com/games/6244027214/not-done-Medieval-Tycoon' target='_blank'>View Game</a>"]
-                }
+                    points: [
+                        "Co-created with <a href='https://www.linkedin.com/in/ianpe-thompson/'>Ian Thompson</a>",
+                        "<a href='https://www.roblox.com/games/6244027214/not-done-Medieval-Tycoon' target='_blank'>View Game</a>",
+                    ],
+                },
             ],
             media: [
                 {
                     type: "youtube",
                     title: "Demo",
                     url: "https://youtu.be/Ip9Ie227-QA",
-                }
-            ]
+                },
+            ],
         },
     },
     {
@@ -298,7 +307,8 @@ const jobExperiences: JobExperience[] = [
         timeRange: "PROJECT",
         title: "Multiplayer Third Person Shooter",
         skills: ["Godot Engine", "Networking"],
-        description: "Built with Godot Engine’s Networking API, this LAN-based multiplayer TPS allows players to host or join matches using IP addresses. While designed for local play, online functionality is possible through Hamachi.",
+        description:
+            "Built with Godot Engine’s Networking API, this LAN-based multiplayer TPS allows players to host or join matches using IP addresses. While designed for local play, online functionality is possible through Hamachi.",
         details: {
             details: [],
             media: [
@@ -306,16 +316,17 @@ const jobExperiences: JobExperience[] = [
                     type: "youtube",
                     title: "Demo",
                     url: "https://youtu.be/iBmT5c8xoso",
-                }
-            ]
-        }
+                },
+            ],
+        },
     },
     {
         id: 11,
         timeRange: "PROJECT",
         title: "Platformer Sandbox",
         skills: ["Gamemaker Studio 2"],
-        description: "This 2D platformer sandbox was built to experiment with player effects and mechanics, including portals, boosts, jump pads, drop-through platforms, enemy cannons, and a health system. It features a smooth camera and responsive controls for testing platforming interactions in a focused environment.",
+        description:
+            "This 2D platformer sandbox was built to experiment with player effects and mechanics, including portals, boosts, jump pads, drop-through platforms, enemy cannons, and a health system. It features a smooth camera and responsive controls for testing platforming interactions in a focused environment.",
         details: {
             details: [],
             media: [
@@ -323,9 +334,9 @@ const jobExperiences: JobExperience[] = [
                     type: "youtube",
                     title: "Demo",
                     url: "https://youtu.be/psjzJolidAo",
-                }
-            ]
-        }
+                },
+            ],
+        },
     },
 ];
 

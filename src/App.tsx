@@ -100,8 +100,8 @@ function App() {
                     </div>
                 </div>
             </div>
-            <ScrollToTopButton 
-                rightPaneRef={rightPaneRef} 
+            <ScrollToTopButton
+                rightPaneRef={rightPaneRef}
                 isMobileView={isMobileView}
                 isCardExpanded={isCardExpanded}
             />
