@@ -26,6 +26,29 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
     // Lock scroll when the card is not closing (i.e., it's opening or open)
     useBodyScrollLock(!isClosing);
 
+    // Add global scroll event listener to redirect scroll to expanded card
+    useEffect(() => {
+        if (isClosing) return;
+
+        const handleGlobalScroll = (event: WheelEvent) => {
+            event.preventDefault();
+
+            if (contentRef.current) {
+                const scrollAmount = event.deltaY;
+                contentRef.current.scrollTop += scrollAmount;
+            }
+        };
+
+        // Add event listener to capture all wheel events
+        document.addEventListener("wheel", handleGlobalScroll, {
+            passive: false,
+        });
+
+        return () => {
+            document.removeEventListener("wheel", handleGlobalScroll);
+        };
+    }, [isClosing]);
+
     useEffect(() => {
         // This useEffect now only handles the card's animation and sizing
         if (!isClosing) {
@@ -68,7 +91,8 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
                     className={`fadeable-content-section ${contentOpacityClass}`}
                 >
                     <h2 className="expanded-title">
-                        {job.title} · {job.company}
+                        {job.title}
+                        {job.company ? ` · ${job.company}` : ""}
                     </h2>
                     <p className="expanded-timerange">{job.timeRange}</p>
 
@@ -84,18 +108,13 @@ const ExpandedCardOverlay: React.FC<ExpandedCardOverlayProps> = ({
                 <div
                     className={`expanded-details fadeable-content-section ${contentOpacityClass}`}
                 >
-                    <DetailSection
-                        title="Key Achievements"
-                        items={job.details.achievements}
-                    />
-                    <DetailSection
-                        title="Projects"
-                        items={job.details.projects}
-                    />
-                    <DetailSection
-                        title="Technologies"
-                        items={[job.details.technologies.join(", ")]}
-                    />
+                    {job.details.details.map((section, index) => (
+                        <DetailSection
+                            key={index}
+                            title={section.title}
+                            items={section.points}
+                        />
+                    ))}
                 </div>
             </div>
         </>

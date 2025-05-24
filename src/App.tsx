@@ -5,6 +5,7 @@ import { AboutMe } from "./components/about";
 import { ContactLinks } from "./components/contact";
 import { Footer } from "./components/footer";
 import { ResumeButton } from "./components/resume";
+import { ScrollToTopButton } from "./components/scrollToTop";
 
 const MOBILE_VIEW_THRESHOLD = 1050; // from App.scss
 
@@ -15,6 +16,7 @@ function App() {
     const [isMobileView, setIsMobileView] = useState(
         window.innerWidth <= MOBILE_VIEW_THRESHOLD,
     );
+    const [isCardExpanded, setIsCardExpanded] = useState(false);
 
     useEffect(() => {
         const checkMobileView = () => {
@@ -83,17 +85,26 @@ function App() {
                     <div className="left-pane" ref={leftPaneRef}>
                         <h1>Douglas Chen</h1>
                         <h2>Software Engineer</h2>
-                        <p>Hire me. Trust me bro.</p>
+                        <p>Computer Science @ UBC</p>
                         <ResumeButton />
+                        <div className="mobile-resume-contact-container">
+                            <ResumeButton />
+                            <ContactLinks />
+                        </div>
                         <ContactLinks />
                     </div>
                     <div className="right-pane" ref={rightPaneRef}>
                         <AboutMe />
-                        <ExperienceList />
+                        <ExperienceList onExpandedChange={setIsCardExpanded} />
                         <Footer />
                     </div>
                 </div>
             </div>
+            <ScrollToTopButton
+                rightPaneRef={rightPaneRef}
+                isMobileView={isMobileView}
+                isCardExpanded={isCardExpanded}
+            />
         </div>
     );
 }

@@ -5,7 +5,8 @@ import "./JobTitle.scss";
 const JobTitle: React.FC<JobTitleProps> = ({ title, company, isHovered }) => (
     <div className="job-title">
         <h2 className={isHovered ? "hovered" : ""}>
-            {title} · {company}
+            {title}
+            {company ? ` · ${company}` : ""}
         </h2>
     </div>
 );

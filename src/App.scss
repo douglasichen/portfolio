@@ -80,6 +80,10 @@ $debug-outline-color-3: rgba(255, 0, 0, 0.5);
     scrollbar-width: none;
 }
 
+.mobile-resume-contact-container {
+    display: none;
+}
+
 @media (max-width: $mobile-view-transition-threshold) {
     .pane-container {
         /* override margin auto -> 0 */
@@ -105,5 +109,30 @@ $debug-outline-color-3: rgba(255, 0, 0, 0.5);
     .right-pane {
         height: auto;
         padding-top: 0;
+    }
+
+    /* Hide desktop elements in mobile view */
+    .left-pane > .resume-button,
+    .left-pane > .contact-links-container {
+        display: none;
+    }
+
+    /* Show mobile container in mobile view */
+    .mobile-resume-contact-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 20px;
+        margin-top: 24px;
+
+        .resume-button {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        .contact-links-container {
+            margin-top: 0;
+            padding-top: 0;
+        }
     }
 }

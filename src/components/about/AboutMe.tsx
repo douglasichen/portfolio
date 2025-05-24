@@ -1,29 +1,18 @@
 import React from "react";
 import "./AboutMe.scss";
+import { aboutMeLines } from "../../data/aboutMeData";
 
 const AboutMe: React.FC = () => {
     return (
         <div className="about-me-section">
-            <p>
-                {/* Placeholder for About Me content. I will ask you for this content next. */}
-                This is a placeholder for the About Me section. I am a
-                passionate developer with experience in various technologies.
-                Looking forward to creating amazing things! This is a
-                placeholder for the About Me section. I am a passionate
-                developer with experience in various technologies. Looking
-                forward to creating amazing things! This is a placeholder for
-                the About Me section. I am a passionate developer with
-                experience in various technologies. Looking forward to creating
-                amazing things! This is a placeholder for the About Me section.
-                I am a passionate developer with experience in various
-                technologies. Looking forward to creating amazing things! This
-                is a placeholder for the About Me section. I am a passionate
-                developer with experience in various technologies. Looking
-                forward to creating amazing things! This is a placeholder for
-                the About Me section. I am a passionate developer with
-                experience in various technologies. Looking forward to creating
-                amazing things!
-            </p>
+            {aboutMeLines.map((line, index) => (
+                <p
+                    key={index}
+                    dangerouslySetInnerHTML={{ __html: line }}
+                    className="about-me-line"
+                >
+                </p>
+            ))}
         </div>
     );
 };

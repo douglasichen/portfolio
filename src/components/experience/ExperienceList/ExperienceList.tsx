@@ -4,7 +4,13 @@ import ExpandedCardOverlay from "../ExpandedCardOverlay";
 import jobExperiences from "../../../data/jobExperiences";
 import "./ExperienceList.scss";
 
-const ExperienceList = () => {
+interface ExperienceListProps {
+    onExpandedChange?: (isExpanded: boolean) => void;
+}
+
+const ExperienceList: React.FC<ExperienceListProps> = (
+    { onExpandedChange },
+) => {
     const [hoveredId, setHoveredId] = useState<number | null>(null);
     const [expandedId, setExpandedId] = useState<number | null>(null);
     const [expandedRect, setExpandedRect] = useState<DOMRect | null>(null);
@@ -47,6 +53,9 @@ const ExperienceList = () => {
         setIsAnimating(true);
         setIsClosing(false);
 
+        // Notify parent that card is expanded
+        onExpandedChange?.(true);
+
         // Update animation state after expansion completes
         setTimeout(() => {
             setIsAnimating(false);
@@ -56,6 +65,9 @@ const ExperienceList = () => {
     const handleCloseExpanded = () => {
         // Start closing animation sequence
         setIsClosing(true);
+
+        // Notify parent that card is no longer expanded
+        onExpandedChange?.(false);
 
         // After animation completes, remove card
         setTimeout(() => {

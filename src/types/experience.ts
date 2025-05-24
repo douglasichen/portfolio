@@ -6,7 +6,7 @@ export interface TimeFrameProps {
 
 export interface JobTitleProps {
     title: string;
-    company: string;
+    company?: string;
     isHovered: boolean;
 }
 
@@ -44,7 +44,7 @@ export interface JobCardProps {
     id: number;
     timeRange: string;
     title: string;
-    company: string;
+    company?: string;
     description: string;
     skills: string[];
     isHovered: boolean;
@@ -62,10 +62,13 @@ export interface MediaItem {
     description?: string;
 }
 
+export interface DetailSection {
+    title: string;
+    points: string[];
+}
+
 export interface JobDetails {
-    achievements: string[];
-    projects: string[];
-    technologies: string[];
+    details: DetailSection[];
     media?: MediaItem[];
 }
 
@@ -73,7 +76,7 @@ export interface JobExperience {
     id: number;
     timeRange: string;
     title: string;
-    company: string;
+    company?: string;
     description: string;
     skills: string[];
     details: JobDetails;
