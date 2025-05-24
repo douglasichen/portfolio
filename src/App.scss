@@ -1,5 +1,7 @@
 /* constants */
 $mobile-view-transition-threshold: 1050px;
+$small-mobile-threshold: 600px;
+$mobile-padding: 23px;
 $layout-horizontal-padding: 50px;
 $pane-vertical-padding: 100px;
 
@@ -60,7 +62,7 @@ $debug-outline-color-3: rgba(255, 0, 0, 0.5);
 .left-pane h2 {
     margin-top: $left-pane-text-vertical-separation;
     margin-bottom: $left-pane-text-vertical-separation;
-    font-weight: normal;
+    font-weight: 500;
 }
 
 .right-pane {
@@ -135,5 +137,13 @@ a {
             margin-top: 0;
             padding-top: 0;
         }
+    }
+}
+
+/* Small mobile breakpoint for even smaller screens */
+@media (max-width: $small-mobile-threshold) {
+    .layout {
+        padding-left: $mobile-padding;
+        padding-right: $mobile-padding;
     }
 }
