@@ -5,6 +5,7 @@ import { AboutMe } from "./components/about";
 import { ContactLinks } from "./components/contact";
 import { Footer } from "./components/footer";
 import { ResumeButton } from "./components/resume";
+import { ScrollToTopButton } from "./components/scrollToTop";
 
 const MOBILE_VIEW_THRESHOLD = 1050; // from App.scss
 
@@ -98,6 +99,10 @@ function App() {
                     </div>
                 </div>
             </div>
+            <ScrollToTopButton 
+                rightPaneRef={rightPaneRef} 
+                isMobileView={isMobileView} 
+            />
         </div>
     );
 }
