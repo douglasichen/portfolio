@@ -4,11 +4,13 @@ import "./ScrollToTopButton.scss";
 interface ScrollToTopButtonProps {
     rightPaneRef?: React.RefObject<HTMLDivElement | null>;
     isMobileView: boolean;
+    isCardExpanded?: boolean;
 }
 
 const ScrollToTopButton: React.FC<ScrollToTopButtonProps> = ({ 
     rightPaneRef, 
-    isMobileView 
+    isMobileView,
+    isCardExpanded = false
 }) => {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -64,7 +66,7 @@ const ScrollToTopButton: React.FC<ScrollToTopButtonProps> = ({
 
     return (
         <button
-            className={`scroll-to-top-button ${isVisible ? 'visible' : ''}`}
+            className={`scroll-to-top-button ${isVisible && !isCardExpanded ? 'visible' : ''}`}
             onClick={scrollToTop}
             aria-label="Scroll to top"
         >

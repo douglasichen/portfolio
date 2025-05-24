@@ -16,6 +16,7 @@ function App() {
     const [isMobileView, setIsMobileView] = useState(
         window.innerWidth <= MOBILE_VIEW_THRESHOLD,
     );
+    const [isCardExpanded, setIsCardExpanded] = useState(false);
 
     useEffect(() => {
         const checkMobileView = () => {
@@ -94,14 +95,15 @@ function App() {
                     </div>
                     <div className="right-pane" ref={rightPaneRef}>
                         <AboutMe />
-                        <ExperienceList />
+                        <ExperienceList onExpandedChange={setIsCardExpanded} />
                         <Footer />
                     </div>
                 </div>
             </div>
             <ScrollToTopButton 
                 rightPaneRef={rightPaneRef} 
-                isMobileView={isMobileView} 
+                isMobileView={isMobileView}
+                isCardExpanded={isCardExpanded}
             />
         </div>
     );
