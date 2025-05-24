@@ -6,7 +6,7 @@ export interface TimeFrameProps {
 
 export interface JobTitleProps {
     title: string;
-    company: string;
+    company?: string;
     isHovered: boolean;
 }
 
@@ -44,7 +44,7 @@ export interface JobCardProps {
     id: number;
     timeRange: string;
     title: string;
-    company: string;
+    company?: string;
     description: string;
     skills: string[];
     isHovered: boolean;
@@ -76,7 +76,7 @@ export interface JobExperience {
     id: number;
     timeRange: string;
     title: string;
-    company: string;
+    company?: string;
     description: string;
     skills: string[];
     details: JobDetails;

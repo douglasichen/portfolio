@@ -98,7 +98,7 @@ const jobExperiences: JobExperience[] = [
         id: 3,
         timeRange: "2020 — 2022",
         title: "UI Developer",
-        company: "Shopify",
+        company: "",
         description:
             "Built e-commerce interface components for merchant storefronts. Worked with product managers to translate business requirements into technical solutions that emphasized usability and conversion optimization. Contributed to the company's design system.",
         skills: ["JavaScript", "Vue.js", "SCSS", "Webpack"],
