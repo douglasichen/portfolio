@@ -33,14 +33,13 @@ $fade-time: 250ms;
     }
 
     .expanded-title {
-        font-size: 1.875rem;
+        font-size: 2rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
         color: var(--color-accent);
     }
 
     .expanded-timerange {
-        font-size: 1.125rem;
         margin-bottom: 1.5rem;
         color: var(--color-white);
     }
@@ -49,7 +48,7 @@ $fade-time: 250ms;
         margin-bottom: 2rem;
 
         p {
-            font-size: 1.125rem;
+            // font-size: 1.125rem;
             margin-bottom: 1.5rem;
         }
         // Note: SkillTags styles are in SkillTags/SkillTags.scss
