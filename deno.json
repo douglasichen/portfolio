@@ -1,4 +1,5 @@
 {
+    "name": "douglasichen-portfolio",
     "tasks": {
         "dev": "deno run -A --node-modules-dir npm:vite",
         "build": "deno run -A --node-modules-dir npm:vite build",
@@ -9,7 +10,8 @@
         "lib": [
             "ES2020",
             "DOM",
-            "DOM.Iterable"
+            "DOM.Iterable",
+            "Deno.NS"
         ],
         "jsx": "react-jsx",
         "jsxImportSource": "react",
@@ -29,5 +31,18 @@
     "fmt": {
         "indentWidth": 4
     },
-    "nodeModulesDir": "auto"
+    "nodeModulesDir": "auto",
+    "deploy": {
+        "project": "douglasichen-portfolio",
+        "entrypoint": "server.ts",
+        "include": [
+            "dist/",
+            "server.ts"
+        ],
+        "exclude": [
+            "src/",
+            "node_modules/",
+            "*.scss"
+        ]
+    }
 }

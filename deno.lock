@@ -868,6 +868,13 @@
       "integrity": "sha512-a4UGQaWPH59mOXUYnAG2ewncQS4i4F43Tv3JoAM+s2VDAmS9NsK8GpDMLrCHPksFT7h3K6TOoUNn2pb7RoXx4g=="
     }
   },
+  "redirects": {
+    "https://esm.sh/simple-icons@13/icons": "https://esm.sh/simple-icons@13.21.0/icons"
+  },
+  "remote": {
+    "https://esm.sh/simple-icons@13.21.0/denonext/icons.mjs": "1835f04d982e40f79a560540002816124cee8146adecd9bf24248514923efa94",
+    "https://esm.sh/simple-icons@13.21.0/icons": "b5a93ec68ef40bcdfa47076555b56626f20caa1e726566f57156ec1cc26c92f3"
+  },
   "workspace": {
     "dependencies": [
       "npm:@deno/vite-plugin@^1.0.4",
