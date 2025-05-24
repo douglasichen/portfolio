@@ -42,6 +42,7 @@ $debug-outline-color-3: rgba(255, 0, 0, 0.5);
     display: flex;
     margin-left: auto;
     margin-right: auto;
+    color: var(--color-white);
 }
 
 .left-pane {
@@ -56,10 +57,6 @@ $debug-outline-color-3: rgba(255, 0, 0, 0.5);
     top: 0;
 }
 
-.left-pane h1 {
-    color: var(--color-white);
-}
-
 .left-pane h2 {
     margin-top: $left-pane-text-vertical-separation;
     margin-bottom: $left-pane-text-vertical-separation;
@@ -67,6 +64,7 @@ $debug-outline-color-3: rgba(255, 0, 0, 0.5);
 }
 
 .right-pane {
+    color: var(--color-white);
     width: $right-pane-width;
     padding-top: $pane-vertical-padding;
     padding-bottom: $pane-vertical-padding;
@@ -78,6 +76,9 @@ $debug-outline-color-3: rgba(255, 0, 0, 0.5);
     height: 100vh;
     overflow-y: auto;
     scrollbar-width: none;
+}
+a {
+    color: var(--color-accent);
 }
 
 .mobile-resume-contact-container {
