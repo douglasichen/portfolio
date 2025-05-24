@@ -8,7 +8,7 @@ const jobExperiences: JobExperience[] = [
         title: "Software Engineer Intern",
         company: "InsideDesk",
         description:
-            "Contributed to web scraping systems that automated the extraction of 1M+ dental claims for RCM workflows. Tackled anti-bot challenges and streamlined QA processes using Python, SQL, and AWS—while ensuring HIPAA compliance for sensitive client data.",
+            "Contributed to web scraping systems that automated the extraction of 1M+ dental claims for RCM workflows. Tackled anti-bot challenges and automated QA processes using Python, SQL, and AWS—while ensuring HIPAA compliance for sensitive client data.",
         skills: ["AWS", "TypeScript", "Python", "Web Scraping"],
         details: {
             details: [
@@ -247,8 +247,86 @@ const jobExperiences: JobExperience[] = [
                 }
             ]
         }
-
-    }
+    },
+    {
+        id: 8,
+        timeRange: "PROJECT",
+        title: "Portal Wizard",
+        skills: ["Java", "LibGDX", "JProfiler"],
+        description: "Portal Wizard is a Java-based dungeon game where you play as an ancient wizard who uses spatial magic—specifically, Portal Magic—to outsmart enemies and navigate a world full of danger. Embark on a journey to defeat Desmond Froid, the world’s most powerful fire wizard, using creativity, strategy, and dimensional manipulation.",
+        details: {
+            details: [
+                {
+                    title: "More",
+                    points: ["<a href='https://github.com/douglasichen/PortalGame' target='_blank'>View Source Code</a>"]
+                }
+            ],
+            media: [
+                {
+                    type: "youtube",
+                    title: "Demo",
+                    url: "https://youtu.be/4FzLd-FZOmw",
+                }
+            ]
+        },
+    },
+    {
+        id: 9,
+        timeRange: "PROJECT",
+        title: "Roblox Medieval Tycoon",
+        skills: ["Roblox Dev", "Lua", "NPC"],
+        description: "Build your empire, command your army, and conquer your enemies. In this Roblox tycoon game, you don’t just collect resources—you lead. I designed and developed the core NPC system that lets players recruit soldiers, issue commands, and defend their territory in real time.",
+        details: {
+            details: [
+                {
+                    title: "More",
+                    points: ["Co-created with <a href='https://www.linkedin.com/in/ianpe-thompson/'>Ian Thompson</a>",
+                        "<a href='https://www.roblox.com/games/6244027214/not-done-Medieval-Tycoon' target='_blank'>View Game</a>"]
+                }
+            ],
+            media: [
+                {
+                    type: "youtube",
+                    title: "Demo",
+                    url: "https://youtu.be/Ip9Ie227-QA",
+                }
+            ]
+        },
+    },
+    {
+        id: 10,
+        timeRange: "PROJECT",
+        title: "Multiplayer Third Person Shooter",
+        skills: ["Godot Engine", "Networking"],
+        description: "Built with Godot Engine’s Networking API, this LAN-based multiplayer TPS allows players to host or join matches using IP addresses. While designed for local play, online functionality is possible through Hamachi.",
+        details: {
+            details: [],
+            media: [
+                {
+                    type: "youtube",
+                    title: "Demo",
+                    url: "https://youtu.be/iBmT5c8xoso",
+                }
+            ]
+        }
+    },
+    {
+        id: 11,
+        timeRange: "PROJECT",
+        title: "Platformer Sandbox",
+        skills: ["Gamemaker Studio 2"],
+        description: "This 2D platformer sandbox was built to experiment with player effects and mechanics, including portals, boosts, jump pads, drop-through platforms, enemy cannons, and a health system. It features a smooth camera and responsive controls for testing platforming interactions in a focused environment.",
+        details: {
+            details: [],
+            media: [
+                {
+                    type: "youtube",
+                    title: "Demo",
+                    url: "https://youtu.be/psjzJolidAo",
+                }
+            ]
+        }
+    },
 ];
 
 export default jobExperiences;
