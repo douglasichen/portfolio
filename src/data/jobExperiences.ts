@@ -1,6 +1,6 @@
 import { JobExperience } from "../types/experience";
 
-// Sample job data with additional details
+// Job experiences (work/internship positions)
 const jobExperiences: JobExperience[] = [
     {
         id: 1,
@@ -23,50 +23,6 @@ const jobExperiences: JobExperience[] = [
                         "Created easy to follow visual and written documentation to ensure low maintenance cost and frictionless adoption.",
                     ],
                 },
-                //     {
-                //         title: "Key Achievements",
-                //         points: [
-                //             "Led accessibility initiative that increased <a href='https://www.w3.org/WAI/WCAG21/quickref/' target='_blank' rel='noopener noreferrer'>WCAG compliance</a> from 76% to 98% across the platform",
-                //             "Developed reusable component library with built-in accessibility features used by 40+ engineers",
-                //             "Implemented automated <a href='https://github.com/dequelabs/axe-core' target='_blank' rel='noopener noreferrer'>accessibility testing</a> in CI/CD pipeline, reducing accessibility bugs by 64%",
-                //         ],
-                //     },
-                //     {
-                //         title: "Projects",
-                //         points: [
-                //             "Component System Redesign - Led frontend architecture for accessibility-first design system",
-                //             "Keyboard Navigation Overhaul - Improved keyboard navigation throughout the application",
-                //         ],
-                //     },
-                //     {
-                //         title: "Technologies",
-                //         points: [
-                //             "React",
-                //             "TypeScript",
-                //             "Jest",
-                //             "React Testing Library",
-                //             "Storybook",
-                //             "Figma",
-                //             "NVDA",
-                //             "axe DevTools",
-                //         ],
-                //     },
-            ],
-            media: [
-                // {
-                //     type: "youtube",
-                //     url: "https://www.youtube.com/watch?v=G9smB9Cr1bI&ab_channel=RNSFDev",
-                //     title: "Component Library Demo",
-                //     description:
-                //         "Demonstration of the accessibility-first component library we built",
-                // },
-                // {
-                //     type: "image",
-                //     url: "https://cdn.pixabay.com/photo/2016/06/20/13/16/greengrocers-1468809_1280.jpg",
-                //     title: "Dashboard Interface",
-                //     description:
-                //         "Screenshot of the improved dashboard with accessibility features",
-                // },
             ],
         },
     },
@@ -86,7 +42,7 @@ const jobExperiences: JobExperience[] = [
                         "Problem: To scrape data from large PDFs with slightly different formats, RAGs were not effective due to the overwhelming size and complexity of the PDFs.",
                         "Observation 1: The data to scrape is neatly labelled for humans to read, but difficult for RAGs to extract.",
                         "Observation 2: Models without RAG were great at extracting the data from a single page.",
-                        "Solution: I developed an algorithm to split the PDF data into configurable overlapping chunks and individually fed them into an AI model with a system prompt: “Extract the data into the following json format: { label0: [“...”, “...”], label1: [“...”, “...”] }, where the array of strings for a given label contains all the relevant information for the label. After generating all the separate json data, I combine them all to get labels mapped to large arrays. Finally, I have an AI summarize each array to a string, leaving us with the following information { label0: “all about label0 …”, label1: “all about label1” …}. This method proved to be far more effective than using RAG.",
+                        "Solution: I developed an algorithm to split the PDF data into configurable overlapping chunks and individually fed them into an AI model with a system prompt: 'Extract the data into the following json format: { label0: [\"...\", \"...\"], label1: [\"...\", \"...\"] }, where the array of strings for a given label contains all the relevant information for the label.' After generating all the separate json data, I combine them all to get labels mapped to large arrays. Finally, I have an AI summarize each array to a string, leaving us with the following information { label0: \"all about label0 …\", label1: \"all about label1\" ...}. This method proved to be far more effective than using RAG.",
                     ],
                 },
             ],
@@ -101,23 +57,7 @@ const jobExperiences: JobExperience[] = [
             "Independently built an AI agent that autonomously generates React Native app prototypes in under 30 minutes using a human-in-the-loop LLM system.",
         skills: ["LLM", "AWS", "Node", "Next", "React Native"],
         details: {
-            details: [
-                // {
-                //     title: "Key Achievements",
-                //     points: [
-                //         "Reduced checkout form abandonment rate by 18% through UX improvements",
-                //         "Optimized rendering performance with 42% reduction in load time for payment components",
-                //         "Built internationalization system supporting 28 languages and 45 currencies",
-                //     ]
-                // },
-                // {
-                //     title: "Projects",
-                //     points: [
-                //         "Stripe Elements Redesign - Modernized payment form UI components",
-                //         "Payment Flow Optimization - Streamlined checkout experience",
-                //     ]
-                // }
-            ],
+            details: [],
             media: [
                 {
                     title: "Demo",
@@ -133,7 +73,7 @@ const jobExperiences: JobExperience[] = [
         title: "Developer",
         company: "UBC Game Development Club",
         description:
-            "Engineered a procedural spider animation and behavior system that defined the horror game’s tension and atmosphere. Built a custom inverse kinematics solution to simulate realistic spider movement across uneven cave surfaces, including walls and ceilings.",
+            "Engineered a procedural spider animation and behavior system that defined the horror game's tension and atmosphere. Built a custom inverse kinematics solution to simulate realistic spider movement across uneven cave surfaces, including walls and ceilings.",
         skills: ["Godot Engine", "Linear Algebra"],
         details: {
             details: [
@@ -156,6 +96,10 @@ const jobExperiences: JobExperience[] = [
             ],
         },
     },
+];
+
+// Personal projects
+const projects: JobExperience[] = [
     {
         id: 5,
         timeRange: "PROJECT",
@@ -262,7 +206,7 @@ const jobExperiences: JobExperience[] = [
         title: "Portal Wizard",
         skills: ["Java", "LibGDX", "JProfiler"],
         description:
-            "Portal Wizard is a Java-based dungeon game where you play as an ancient wizard who uses spatial magic—specifically, Portal Magic—to outsmart enemies and navigate a world full of danger. Embark on a journey to defeat Desmond Froid, the world’s most powerful fire wizard, using creativity, strategy, and dimensional manipulation.",
+            "Portal Wizard is a Java-based dungeon game where you play as an ancient wizard who uses spatial magic—specifically, Portal Magic—to outsmart enemies and navigate a world full of danger. Embark on a journey to defeat Desmond Froid, the world's most powerful fire wizard, using creativity, strategy, and dimensional manipulation.",
         details: {
             details: [
                 {
@@ -287,7 +231,7 @@ const jobExperiences: JobExperience[] = [
         title: "Roblox Medieval Tycoon",
         skills: ["Roblox Dev", "Lua", "NPC"],
         description:
-            "Build your empire, command your army, and conquer your enemies. In this Roblox tycoon game, you don’t just collect resources—you lead. I designed and developed the core NPC system that lets players recruit soldiers, issue commands, and defend their territory in real time.",
+            "Build your empire, command your army, and conquer your enemies. In this Roblox tycoon game, you don't just collect resources—you lead. I designed and developed the core NPC system that lets players recruit soldiers, issue commands, and defend their territory in real time.",
         details: {
             details: [
                 {
@@ -313,7 +257,7 @@ const jobExperiences: JobExperience[] = [
         title: "Multiplayer Third Person Shooter",
         skills: ["Godot Engine", "Networking"],
         description:
-            "Built with Godot Engine’s Networking API, this LAN-based multiplayer TPS allows players to host or join matches using IP addresses. While designed for local play, online functionality is possible through Hamachi.",
+            "Built with Godot Engine's Networking API, this LAN-based multiplayer TPS allows players to host or join matches using IP addresses. While designed for local play, online functionality is possible through Hamachi.",
         details: {
             details: [],
             media: [
@@ -345,4 +289,8 @@ const jobExperiences: JobExperience[] = [
     },
 ];
 
-export default jobExperiences;
+// Combined array for components that need all items
+const allExperiences = [...jobExperiences, ...projects];
+
+export { jobExperiences, projects, allExperiences };
+export default allExperiences;
