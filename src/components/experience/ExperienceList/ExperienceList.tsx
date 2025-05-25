@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import JobCard from "../JobCard";
+import Card from "../Card";
 import ExpandedCardOverlay from "../ExpandedCardOverlay";
 import jobExperiences from "../../../data/jobExperiences";
 import "./ExperienceList.scss";
@@ -82,6 +82,10 @@ const ExperienceList: React.FC<ExperienceListProps> = (
         }, 250);
     };
 
+    // Separate experiences from projects
+    const experiences = jobExperiences.filter(job => job.timeRange !== "PROJECT");
+    const projects = jobExperiences.filter(job => job.timeRange === "PROJECT");
+
     // Get expanded job data
     const expandedJob = expandedId
         ? jobExperiences.find((job) => job.id === expandedId)
@@ -89,8 +93,33 @@ const ExperienceList: React.FC<ExperienceListProps> = (
 
     return (
         <div ref={containerRef} className="experience-list-container">
-            {jobExperiences.map((job) => (
-                <JobCard
+            {/* Experiences */}
+            {experiences.map((job) => (
+                <Card
+                    key={job.id}
+                    id={job.id}
+                    timeRange={job.timeRange}
+                    title={job.title}
+                    company={job.company}
+                    description={job.description}
+                    skills={job.skills}
+                    isHovered={hoveredId === job.id}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={handleCardClick}
+                    hoveredId={hoveredId}
+                    expandedId={expandedId}
+                />
+            ))}
+
+            {/* Separator between experiences and projects */}
+            {projects.length > 0 && (
+                <div className="section-separator"></div>
+            )}
+
+            {/* Projects */}
+            {projects.map((job) => (
+                <Card
                     key={job.id}
                     id={job.id}
                     timeRange={job.timeRange}

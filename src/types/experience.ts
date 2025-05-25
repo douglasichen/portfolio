@@ -40,7 +40,7 @@ export interface ExpandedCardOverlayProps {
     isClosing: boolean;
 }
 
-export interface JobCardProps {
+export interface CardProps {
     id: number;
     timeRange: string;
     title: string;
