@@ -19,8 +19,8 @@ const jobExperiences: JobExperience[] = [
                         "Took advantage of CloudWatch to make data-driven decisions.",
                         "Configured SES and Cloudflare to send and receive emails from a Cloudflare hosted subdomain.",
                         "Used SNS to connect SES to Lambdas, routing and processing email data to a serverless redis instance hosted on ElastiCache.",
-                        "Setup EC2 instance for developers to access AWS facing resources",
-                        "Created easy to follow visual and written documentation to ensure low maintenance cost and frictionless adoption",
+                        "Setup EC2 instance for developers to access AWS facing resources.",
+                        "Created easy to follow visual and written documentation to ensure low maintenance cost and frictionless adoption.",
                     ],
                 },
                 //     {
@@ -136,7 +136,12 @@ const jobExperiences: JobExperience[] = [
             "Engineered a procedural spider animation and behavior system that defined the horror game’s tension and atmosphere. Built a custom inverse kinematics solution to simulate realistic spider movement across uneven cave surfaces, including walls and ceilings.",
         skills: ["Godot Engine", "Linear Algebra"],
         details: {
-            details: [],
+            details: [
+                {
+                    title: "More",
+                    points: ["<a href='https://rn-games.itch.io/spider-cave-game-demo' target='_blank'>View Game</a>"]
+                }
+            ],
             media: [
                 {
                     type: "youtube",
@@ -214,7 +219,7 @@ const jobExperiences: JobExperience[] = [
         company: "",
         description:
             "Built a sleek and responsive portfolio using Deno, React, and Vite. Leveraged AI tools to scaffold the initial layout, then customized design details—spacing, color palette, and component structure—for visual clarity and long-term maintainability. The site serves as a creative outlet and a central hub for showcasing my work.",
-        skills: ["Deno", "React", "Vite", "Vercel", "AI-Assisted"],
+        skills: ["Deno", "React", "Vite", "AI-Assisted"],
         details: {
             details: [
                 {
