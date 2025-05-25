@@ -11,8 +11,10 @@
     margin-bottom: 1.5rem;
     transition: color 150ms ease;
 
-    &:hover {
-        color: var(--color-medium);
+    @media (hover: hover) {
+        &:hover {
+            color: var(--color-medium);
+        }
     }
 
     span {
