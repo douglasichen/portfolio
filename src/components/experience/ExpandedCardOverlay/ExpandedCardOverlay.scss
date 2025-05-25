@@ -13,11 +13,17 @@ $fade-time: 250ms;
     color: var(--color-white); // Light gray text
     padding-top: 2rem;
     padding-bottom: 2rem;
-    scrollbar-width: none;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
     background-color: var(--color-darkest);
     z-index: 1;
     transition: all 250ms ease-out;
     overflow: auto;
+
+    /* WebKit browsers (Safari, Chrome) */
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     .fadeable-content-section {
         opacity: 1;
