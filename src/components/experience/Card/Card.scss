@@ -1,6 +1,6 @@
 @use "../../../App.scss";
 
-.job-card {
+.card {
     width: 100%;
     margin-bottom: 3rem;
     transition: opacity 150ms ease;
@@ -15,7 +15,7 @@
     }
 
     // positions the time frame correctly
-    .job-card-content {
+    .card-content {
         display: flex;
         flex-direction: column;
 
@@ -24,7 +24,7 @@
         }
     }
 
-    .job-details {
+    .card-details {
         @media (min-width: App.$mobile-view-transition-threshold) {
             width: 80%;
         }

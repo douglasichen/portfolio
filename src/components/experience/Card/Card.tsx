@@ -3,10 +3,10 @@ import TimeFrame from "../TimeFrame";
 import JobTitle from "../JobTitle";
 import JobDescription from "../JobDescription";
 import SkillTags from "../SkillTags";
-import { JobCardProps } from "../../../types/experience";
-import "./JobCard.scss";
+import { CardProps } from "../../../types/experience";
+import "./Card.scss";
 
-const JobCard: React.FC<JobCardProps> = ({
+const Card: React.FC<CardProps> = ({
     timeRange,
     title,
     company,
@@ -28,7 +28,7 @@ const JobCard: React.FC<JobCardProps> = ({
     return (
         <div
             ref={cardRef}
-            className={`job-card ${shouldDim ? "dimmed" : ""}`}
+            className={`card ${shouldDim ? "dimmed" : ""}`}
             onMouseEnter={() => expandedId === null && onMouseEnter(id)}
             onMouseLeave={() => expandedId === null && onMouseLeave()}
             onClick={() => {
@@ -38,9 +38,9 @@ const JobCard: React.FC<JobCardProps> = ({
                 }
             }}
         >
-            <div className="job-card-content">
+            <div className="card-content">
                 <TimeFrame timeRange={timeRange} />
-                <div className="job-details">
+                <div className="card-details">
                     <JobTitle
                         title={title}
                         company={company}
@@ -54,4 +54,4 @@ const JobCard: React.FC<JobCardProps> = ({
     );
 };
 
-export default JobCard;
+export default Card;

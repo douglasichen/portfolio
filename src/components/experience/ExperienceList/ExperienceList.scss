@@ -2,4 +2,11 @@
 
 .experience-list-container {
     padding: 0;
+
+    .section-separator {
+        margin: 5rem 0;
+        height: 1px;
+        background: var(--color-dark);
+        width: 100%;
+    }
 }

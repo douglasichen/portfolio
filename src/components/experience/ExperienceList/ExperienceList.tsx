@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import JobCard from "../JobCard";
+import Card from "../Card";
 import ExpandedCardOverlay from "../ExpandedCardOverlay";
-import jobExperiences from "../../../data/jobExperiences";
+import { jobExperiences, projects, allExperiences } from "../../../data/jobExperiences";
 import "./ExperienceList.scss";
 
 interface ExperienceListProps {
@@ -82,15 +82,40 @@ const ExperienceList: React.FC<ExperienceListProps> = (
         }, 250);
     };
 
-    // Get expanded job data
+    // Get expanded job data from all experiences
     const expandedJob = expandedId
-        ? jobExperiences.find((job) => job.id === expandedId)
+        ? allExperiences.find((job) => job.id === expandedId)
         : null;
 
     return (
         <div ref={containerRef} className="experience-list-container">
+            {/* Experiences */}
             {jobExperiences.map((job) => (
-                <JobCard
+                <Card
+                    key={job.id}
+                    id={job.id}
+                    timeRange={job.timeRange}
+                    title={job.title}
+                    company={job.company}
+                    description={job.description}
+                    skills={job.skills}
+                    isHovered={hoveredId === job.id}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    onClick={handleCardClick}
+                    hoveredId={hoveredId}
+                    expandedId={expandedId}
+                />
+            ))}
+
+            {/* Separator between experiences and projects */}
+            {projects.length > 0 && (
+                <div className="section-separator"></div>
+            )}
+
+            {/* Projects */}
+            {projects.map((job) => (
+                <Card
                     key={job.id}
                     id={job.id}
                     timeRange={job.timeRange}
