@@ -5,7 +5,7 @@ const jobExperiences: JobExperience[] = [
     {
         id: 1,
         timeRange: "JAN — AUG 2025",
-        title: "Software Engineer Intern",
+        title: "Software Developer Intern",
         company: "InsideDesk",
         description:
             "Contributed to web scraping systems that automated the extraction of 1M+ dental claims for RCM workflows. Tackled anti-bot challenges and automated QA processes using Python, SQL, and AWS—while ensuring HIPAA compliance for sensitive client data.",
@@ -29,7 +29,7 @@ const jobExperiences: JobExperience[] = [
     {
         id: 2,
         timeRange: "AUG — DEC 2024",
-        title: "AI Software Engineer Consultant",
+        title: "AI Software Developer Consultant",
         company: "Self-employed",
         description:
             "Developed AI-powered solutions for a dental software company to improve insurance data management. Built and deployed AI systems using RAG, React, Flask, LangChain, and AWS.",
@@ -51,7 +51,7 @@ const jobExperiences: JobExperience[] = [
     {
         id: 3,
         timeRange: "MAY — AUG 2024",
-        title: "AI Software Engineer Intern",
+        title: "AI Software Developer Intern",
         company: "Exchange Solutions",
         description:
             "Independently built an AI agent that autonomously generates React Native app prototypes in under 30 minutes using a human-in-the-loop LLM system.",
