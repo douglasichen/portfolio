@@ -29,7 +29,7 @@ const jobExperiences: JobExperience[] = [
     {
         id: 2,
         timeRange: "AUG — DEC 2024",
-        title: "AI Software Developer Consultant",
+        title: "AI Consultant",
         company: "Self-employed",
         description:
             "Developed AI-powered solutions for a dental software company to improve insurance data management. Built and deployed AI systems using RAG, React, Flask, LangChain, and AWS.",
