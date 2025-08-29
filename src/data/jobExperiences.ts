@@ -7,6 +7,7 @@ const jobExperiences: JobExperience[] = [
         timeRange: "JAN — AUG 2025",
         title: "Software Developer Intern",
         company: "InsideDesk",
+        slug: "insidedesk-intern",
         description:
             "Contributed to web scraping systems that automated the extraction of 1M+ dental claims for RCM workflows. Tackled anti-bot challenges and automated QA processes using Python, SQL, and AWS—while ensuring HIPAA compliance for sensitive client data.",
         skills: ["AWS", "TypeScript", "Python", "Web Scraping"],
@@ -31,6 +32,7 @@ const jobExperiences: JobExperience[] = [
         timeRange: "AUG — DEC 2024",
         title: "AI Consultant",
         company: "Self-employed",
+        slug: "ai-consultant",
         description:
             "Developed AI-powered solutions for a dental software company to improve insurance data management. Built and deployed AI systems using RAG, React, Flask, LangChain, and AWS.",
         skills: ["RAG", "LangChain", "AWS", "Flask", "React"],
@@ -53,6 +55,7 @@ const jobExperiences: JobExperience[] = [
         timeRange: "MAY — AUG 2024",
         title: "AI Software Developer Intern",
         company: "Exchange Solutions",
+        slug: "exchange-solutions-intern",
         description:
             "Independently built an AI agent that autonomously generates React Native app prototypes in under 30 minutes using a human-in-the-loop LLM system.",
         skills: ["LLM", "AWS", "Node", "Next", "React Native"],
@@ -72,6 +75,7 @@ const jobExperiences: JobExperience[] = [
         timeRange: "SEP — DEC 2023",
         title: "Developer",
         company: "UBC Game Development Club",
+        slug: "ubc-game-dev",
         description:
             "Engineered a procedural spider animation and behavior system that defined the horror game's tension and atmosphere. Built a custom inverse kinematics solution to simulate realistic spider movement across uneven cave surfaces, including walls and ceilings.",
         skills: ["Godot Engine", "Linear Algebra"],
@@ -104,6 +108,8 @@ const projects: JobExperience[] = [
         id: 5,
         timeRange: "PROJECT",
         title: "Neural Network From Scratch",
+        company: "",
+        slug: "neural-network-from-scratch",
         description:
             "Developed and trained a neural network from scratch in C++ using calculus, gradient descent and dynamic programming (92.5\% accuracy).",
         skills: ["Machine Learning", "Algorithms", "C++"],
@@ -161,6 +167,7 @@ const projects: JobExperience[] = [
         timeRange: "PROJECT",
         title: "Personal Website",
         company: "",
+        slug: "personal-website",
         description:
             "Built a sleek and responsive portfolio using Deno, React, and Vite. Leveraged AI tools to scaffold the initial layout, then customized design details—spacing, color palette, and component structure—for visual clarity and long-term maintainability. The site serves as a creative outlet and a central hub for showcasing my work.",
         skills: ["Deno", "React", "Vite", "AI-Assisted"],
@@ -179,6 +186,8 @@ const projects: JobExperience[] = [
         id: 7,
         timeRange: "PROJECT",
         title: "Froggi",
+        company: "",
+        slug: "froggi",
         skills: ["Gamemaker Studio 2", "Game Design", "Sound & Music Design"],
         description:
             "Built as a birthday present for a special person. In this video game, you are a frog named Froggi. However, you are no ordinary frog. Froggi can grow a stronger and longer tongue to attack it's enemies. This unique frog specimen can also gain extra hops and health. As the only one left of your kind, you must fight off the evil monsters that come wave after wave. How long can you survive?",
@@ -204,6 +213,8 @@ const projects: JobExperience[] = [
         id: 8,
         timeRange: "PROJECT",
         title: "Portal Wizard",
+        company: "",
+        slug: "portal-wizard",
         skills: ["Java", "LibGDX", "JProfiler"],
         description:
             "Portal Wizard is a Java-based dungeon game where you play as an ancient wizard who uses spatial magic—specifically, Portal Magic—to outsmart enemies and navigate a world full of danger. Embark on a journey to defeat Desmond Froid, the world's most powerful fire wizard, using creativity, strategy, and dimensional manipulation.",
@@ -229,6 +240,8 @@ const projects: JobExperience[] = [
         id: 9,
         timeRange: "PROJECT",
         title: "Roblox Medieval Tycoon",
+        company: "",
+        slug: "roblox-medieval-tycoon",
         skills: ["Roblox Dev", "Lua", "NPC"],
         description:
             "Build your empire, command your army, and conquer your enemies. In this Roblox tycoon game, you don't just collect resources—you lead. I designed and developed the core NPC system that lets players recruit soldiers, issue commands, and defend their territory in real time.",
@@ -255,6 +268,8 @@ const projects: JobExperience[] = [
         id: 10,
         timeRange: "PROJECT",
         title: "Multiplayer Third Person Shooter",
+        company: "",
+        slug: "multiplayer-tps",
         skills: ["Godot Engine", "Networking"],
         description:
             "Built with Godot Engine's Networking API, this LAN-based multiplayer TPS allows players to host or join matches using IP addresses. While designed for local play, online functionality is possible through Hamachi.",
@@ -273,6 +288,8 @@ const projects: JobExperience[] = [
         id: 11,
         timeRange: "PROJECT",
         title: "Platformer Sandbox",
+        company: "",
+        slug: "platformer-sandbox",
         skills: ["Gamemaker Studio 2"],
         description:
             "This 2D platformer sandbox was built to experiment with player effects and mechanics, including portals, boosts, jump pads, drop-through platforms, enemy cannons, and a health system. It features a smooth camera and responsive controls for testing platforming interactions in a focused environment.",

@@ -77,6 +77,7 @@ export interface JobExperience {
     timeRange: string;
     title: string;
     company?: string;
+    slug: string;
     description: string;
     skills: string[];
     details: JobDetails;
