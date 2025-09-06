@@ -29,6 +29,7 @@ const Card: React.FC<CardProps> = ({
         <div
             ref={cardRef}
             className={`card ${shouldDim ? "dimmed" : ""}`}
+            data-experience-id={id}
             onMouseEnter={() => expandedId === null && onMouseEnter(id)}
             onMouseLeave={() => expandedId === null && onMouseLeave()}
             onClick={() => {

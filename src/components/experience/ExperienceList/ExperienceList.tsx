@@ -33,6 +33,35 @@ const ExperienceList: React.FC<ExperienceListProps> = (
         }
     }, []);
 
+    // Handle URL hash changes on mount and when hash changes
+    useEffect(() => {
+        const handleHashChange = () => {
+            const hash = window.location.hash.slice(1); // Remove the # symbol
+            if (hash) {
+                // Find the experience with matching slug
+                const experience = allExperiences.find(exp => exp.slug === hash);
+                if (experience) {
+                    // Find the card element to get its position
+                    const cardElement = document.querySelector(`[data-experience-id="${experience.id}"]`);
+                    if (cardElement) {
+                        const rect = cardElement.getBoundingClientRect();
+                        handleCardClick(experience.id, rect);
+                    }
+                }
+            }
+        };
+
+        // Handle initial hash on mount
+        handleHashChange();
+
+        // Listen for hash changes
+        window.addEventListener('hashchange', handleHashChange);
+        
+        return () => {
+            window.removeEventListener('hashchange', handleHashChange);
+        };
+    }, []);
+
     const handleMouseEnter = (id: number) => {
         if (supportsHover && expandedId === null) {
             setHoveredId(id);
@@ -57,6 +86,12 @@ const ExperienceList: React.FC<ExperienceListProps> = (
         setIsAnimating(true);
         setIsClosing(false);
 
+        // Update URL hash
+        const experience = allExperiences.find(exp => exp.id === id);
+        if (experience) {
+            window.location.hash = experience.slug;
+        }
+
         // Notify parent that card is expanded
         onExpandedChange?.(true);
 
@@ -69,6 +104,11 @@ const ExperienceList: React.FC<ExperienceListProps> = (
     const handleCloseExpanded = () => {
         // Start closing animation sequence
         setIsClosing(true);
+
+        // Clear URL hash
+        if (window.location.hash) {
+            window.history.pushState("", document.title, window.location.pathname);
+        }
 
         // Notify parent that card is no longer expanded
         onExpandedChange?.(false);
