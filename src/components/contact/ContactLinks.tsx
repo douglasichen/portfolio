@@ -1,7 +1,7 @@
 import React from "react";
 import "./ContactLinks.scss";
 // @ts-ignore
-import { siGithub, siLinkedin } from "https://esm.sh/simple-icons@13/icons";
+import { siGithub, siLinkedin, siLeetcode, siInstagram } from "https://esm.sh/simple-icons@13/icons";
 import { contactInfo } from "../../data/contactData";
 
 interface ContactLinkProps {
@@ -36,6 +36,8 @@ const ContactLink: React.FC<ContactLinkProps> = (
 const ContactLinks: React.FC = () => {
     const githubPath = siGithub.path;
     const linkedinPath = siLinkedin.path;
+    const leetcodePath = siLeetcode.path;
+    const instagramPath = siInstagram.path;
 
     return (
         <div className="contact-links-container">
@@ -49,6 +51,12 @@ const ContactLinks: React.FC = () => {
                 href={contactInfo.linkedinUrl}
                 svgPath={linkedinPath}
                 title={siLinkedin.title}
+                fillColor={`var(--color-white)`}
+            />
+            <ContactLink
+                href={contactInfo.leetcodeUrl}
+                svgPath={leetcodePath}
+                title={siLeetcode.title}
                 fillColor={`var(--color-white)`}
             />
         </div>
