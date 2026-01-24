@@ -73,8 +73,8 @@ const jobExperiences: JobExperience[] = [
     {
         id: 4,
         timeRange: "SEP — DEC 2023",
-        title: "Engineer",
-        company: "UBC Game Development Club",
+        title: "Software Engineer",
+        company: "UBC Game Dev Club",
         slug: "ubc-game-dev",
         description:
             "Engineered a procedural spider animation and behavior system that defined the horror game's tension and atmosphere. Built a custom inverse kinematics solution to simulate realistic spider movement across uneven cave surfaces, including walls and ceilings.",
