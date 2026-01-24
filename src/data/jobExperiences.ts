@@ -5,7 +5,7 @@ const jobExperiences: JobExperience[] = [
     {
         id: 1,
         timeRange: "JAN — AUG 2025",
-        title: "Software Developer Intern",
+        title: "Software Engineer Intern",
         company: "InsideDesk",
         slug: "insidedesk-intern",
         description:
@@ -20,7 +20,7 @@ const jobExperiences: JobExperience[] = [
                         "Took advantage of CloudWatch to make data-driven decisions.",
                         "Configured SES and Cloudflare to send and receive emails from a Cloudflare hosted subdomain.",
                         "Used SNS to connect SES to Lambdas, routing and processing email data to a serverless redis instance hosted on ElastiCache.",
-                        "Setup EC2 instance for developers to access AWS facing resources.",
+                        "Setup EC2 instance for Engineers to access AWS facing resources.",
                         "Created easy to follow visual and written documentation to ensure low maintenance cost and frictionless adoption.",
                     ],
                 },
@@ -53,7 +53,7 @@ const jobExperiences: JobExperience[] = [
     {
         id: 3,
         timeRange: "MAY — AUG 2024",
-        title: "AI Software Developer Intern",
+        title: "AI Software Engineer Intern",
         company: "Exchange Solutions",
         slug: "exchange-solutions-intern",
         description:
@@ -73,7 +73,7 @@ const jobExperiences: JobExperience[] = [
     {
         id: 4,
         timeRange: "SEP — DEC 2023",
-        title: "Developer",
+        title: "Engineer",
         company: "UBC Game Development Club",
         slug: "ubc-game-dev",
         description:

@@ -84,7 +84,7 @@ function App() {
                 <div className="pane-container">
                     <div className="left-pane" ref={leftPaneRef}>
                         <h1>Douglas Chen</h1>
-                        <h2>Software Developer</h2>
+                        <h2>Software Engineer</h2>
                         <p>Computer Science @ UBC</p>
                         <ResumeButton />
                         <div className="mobile-resume-contact-container">
